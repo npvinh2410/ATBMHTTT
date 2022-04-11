@@ -35,7 +35,7 @@ namespace ATBMHTTT
             }
             else
             {
-                OracleConnection conn = DBConnection.GetDBConnection();
+                OracleConnection conn = DBConnection.GetDBConnection(user, password);
                 try
                 {
                     conn.Open();

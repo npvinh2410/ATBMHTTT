@@ -9,13 +9,11 @@ namespace ATBMHTTT.Connection
 {
     class DBConnection
     {
-        public static OracleConnection GetDBConnection()
+        public static OracleConnection GetDBConnection(string user, string password)
         {
             string host = "localhost";
             int port = 1521;
             string sid = "xe";
-            string user = "DBA_THUVIEN2";
-            string password = "DBA_THUVIEN2";
 
             return DBOracleUtils.GetDBConnection(host, port, sid, user, password);
         }
