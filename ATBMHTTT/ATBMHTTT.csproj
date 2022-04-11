@@ -79,8 +79,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConnection\DBOracleUtils.cs" />
-    <Compile Include="DBConnection\DBUtils.cs" />
+    <Compile Include="Connection\DBOracleUtils.cs" />
+    <Compile Include="Connection\DBConnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

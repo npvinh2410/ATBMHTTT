@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 
-namespace ATBMHTTT.DBConnection
+namespace ATBMHTTT.Connection
 {
-    class DBUtils
+    class DBConnection
     {
         public static OracleConnection GetDBConnection()
         {
             string host = "localhost";
             int port = 1521;
             string sid = "xe";
-            string user = "sys";
-            string password = "0932001Pr@";
+            string user = "DBA_THUVIEN2";
+            string password = "DBA_THUVIEN2";
 
             return DBOracleUtils.GetDBConnection(host, port, sid, user, password);
         }

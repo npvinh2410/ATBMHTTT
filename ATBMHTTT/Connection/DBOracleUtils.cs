@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 
-namespace ATBMHTTT.DBConnection
+namespace ATBMHTTT.Connection
 {
     class DBOracleUtils
     {
@@ -19,7 +19,8 @@ namespace ATBMHTTT.DBConnection
 
             string connString = "Data Source = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = "
                             + host + ")(PORT = " + port + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
-                            + sid + ")));DBA Privilege=SYSDBA; Password = " + password + "; User ID = " + user;
+                            + sid + "))); Password =" + password + "; User ID = " + user;
+
             OracleConnection conn = new OracleConnection();
 
             conn.ConnectionString = connString;

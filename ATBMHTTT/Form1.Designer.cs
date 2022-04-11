@@ -39,10 +39,10 @@ namespace ATBMHTTT
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.roleNameTextBox = new System.Windows.Forms.TextBox();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.privilegesGridView = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -69,7 +69,7 @@ namespace ATBMHTTT
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.privilegesGridView);
             this.tabPage2.Controls.Add(this.userNameTextBox);
             this.tabPage2.Controls.Add(this.roleNameTextBox);
             this.tabPage2.Controls.Add(this.viewPrivilegesBtn);
@@ -149,28 +149,30 @@ namespace ATBMHTTT
             this.userNameTextBox.Size = new System.Drawing.Size(225, 30);
             this.userNameTextBox.TabIndex = 4;
             // 
-            // dataGridView1
+            // privilegesGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(920, 460);
-            this.dataGridView1.TabIndex = 5;
+            this.privilegesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.privilegesGridView.Location = new System.Drawing.Point(36, 110);
+            this.privilegesGridView.Name = "privilegesGridView";
+            this.privilegesGridView.RowHeadersWidth = 51;
+            this.privilegesGridView.RowTemplate.Height = 24;
+            this.privilegesGridView.Size = new System.Drawing.Size(920, 460);
+            this.privilegesGridView.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1061, 653);
             this.Controls.Add(this.tabControl1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,7 +188,7 @@ namespace ATBMHTTT
         private System.Windows.Forms.Label roleNameLabel;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox roleNameTextBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView privilegesGridView;
         private System.Windows.Forms.TextBox userNameTextBox;
     }
 }
