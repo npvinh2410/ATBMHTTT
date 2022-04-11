@@ -26,6 +26,8 @@ namespace ATBMHTTT
 
             if (Login(username, password))
             {
+                Login_Info.USERNAME = username;
+                Login_Info.PASSWORD = password;
                 Form1 f = new Form1();
                 this.Hide();
                 f.ShowDialog();

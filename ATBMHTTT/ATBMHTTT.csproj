@@ -93,6 +93,7 @@
     <Compile Include="Form2_Login.Designer.cs">
       <DependentUpon>Form2_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login_Info.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
