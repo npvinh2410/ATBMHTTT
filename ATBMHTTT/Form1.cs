@@ -17,9 +17,14 @@ namespace ATBMHTTT
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        private void viewPrivilegesBtn_Click(object sender, EventArgs e)
+        {
+            string roleName = roleNameTextBox.Text;
+            string userName = userNameTextBox.Text;
+            if(roleName != "" && userName != ""){
+                MessageBox.Show("Chỉ nhập duy nhất user hoặc role", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
     }
 }
