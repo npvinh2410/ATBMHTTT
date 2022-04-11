@@ -68,5 +68,39 @@ namespace ATBMHTTT
                 conn.Close();
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string name_user = tbuser_user.Text;
+            string table = tbuser_bang.Text;
+            string collum = tbuser_cot.Text;
+            string permissiom = tbuser_quyen.Text;
+            bool check = ckbgrant.CheckState == CheckState.Checked ? true : false;
+            if (check==true)
+            {
+                MessageBox.Show("with grant option");
+            }
+            else
+                MessageBox.Show("with no grant option");
+        }
+
+        private void btrole_capquyen_Click(object sender, EventArgs e)
+        {
+            string name_user = tbrole_user.Text;
+            string table = tbrole_bang.Text;
+            string collum = tbrole_cot.Text;
+            string permissiom = tbrole_quyen.Text;
+        }
+
+        private void bt_capquyen_Click(object sender, EventArgs e)
+        {
+            string name_role = tbrole.Text;
+            string name_user = tbuser.Text;
+        }
     }
 }
