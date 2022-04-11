@@ -14,8 +14,8 @@ namespace ATBMHTTT.DBConnection
             string host = "localhost";
             int port = 1521;
             string sid = "xe";
-            string user = "sys";
-            string password = "Npv2410#";
+            string user = "nguyenvana";
+            string password = "nguyenvana";
 
             return DBOracleUtils.GetDBConnection(host, port, sid, user, password);
         }
