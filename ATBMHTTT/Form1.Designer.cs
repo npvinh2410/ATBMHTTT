@@ -32,14 +32,16 @@ namespace ATBMHTTT
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.privilegesGridView = new System.Windows.Forms.DataGridView();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.roleNameTextBox = new System.Windows.Forms.TextBox();
             this.viewPrivilegesBtn = new System.Windows.Forms.Button();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.roleNameLabel = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.roleNameTextBox = new System.Windows.Forms.TextBox();
-            this.userNameTextBox = new System.Windows.Forms.TextBox();
-            this.privilegesGridView = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).BeginInit();
@@ -69,6 +71,8 @@ namespace ATBMHTTT
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.privilegesGridView);
             this.tabPage2.Controls.Add(this.userNameTextBox);
             this.tabPage2.Controls.Add(this.roleNameTextBox);
@@ -82,6 +86,52 @@ namespace ATBMHTTT
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thông tin quyền user/role";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(544, 113);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 37);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Thêm user";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(121, 113);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 37);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Thêm Role";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // privilegesGridView
+            // 
+            this.privilegesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.privilegesGridView.Location = new System.Drawing.Point(36, 185);
+            this.privilegesGridView.Name = "privilegesGridView";
+            this.privilegesGridView.RowHeadersWidth = 51;
+            this.privilegesGridView.RowTemplate.Height = 24;
+            this.privilegesGridView.Size = new System.Drawing.Size(920, 385);
+            this.privilegesGridView.TabIndex = 5;
+            // 
+            // userNameTextBox
+            // 
+            this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTextBox.Location = new System.Drawing.Point(544, 44);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(225, 30);
+            this.userNameTextBox.TabIndex = 4;
+            // 
+            // roleNameTextBox
+            // 
+            this.roleNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleNameTextBox.Location = new System.Drawing.Point(121, 42);
+            this.roleNameTextBox.Name = "roleNameTextBox";
+            this.roleNameTextBox.Size = new System.Drawing.Size(225, 30);
+            this.roleNameTextBox.TabIndex = 3;
             // 
             // viewPrivilegesBtn
             // 
@@ -133,32 +183,6 @@ namespace ATBMHTTT
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // roleNameTextBox
-            // 
-            this.roleNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roleNameTextBox.Location = new System.Drawing.Point(121, 42);
-            this.roleNameTextBox.Name = "roleNameTextBox";
-            this.roleNameTextBox.Size = new System.Drawing.Size(225, 30);
-            this.roleNameTextBox.TabIndex = 3;
-            // 
-            // userNameTextBox
-            // 
-            this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTextBox.Location = new System.Drawing.Point(544, 44);
-            this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(225, 30);
-            this.userNameTextBox.TabIndex = 4;
-            // 
-            // privilegesGridView
-            // 
-            this.privilegesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.privilegesGridView.Location = new System.Drawing.Point(36, 110);
-            this.privilegesGridView.Name = "privilegesGridView";
-            this.privilegesGridView.RowHeadersWidth = 51;
-            this.privilegesGridView.RowTemplate.Height = 24;
-            this.privilegesGridView.Size = new System.Drawing.Size(920, 460);
-            this.privilegesGridView.TabIndex = 5;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,6 +214,8 @@ namespace ATBMHTTT
         private System.Windows.Forms.TextBox roleNameTextBox;
         private System.Windows.Forms.DataGridView privilegesGridView;
         private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
