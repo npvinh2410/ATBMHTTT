@@ -32,12 +32,21 @@ namespace ATBMHTTT
             {
                 conn.Open();
 
-                OracleCommand command = new OracleCommand(create_user, conn);
+                OracleCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = create_user;
+
+
+                cmd.ExecuteNonQuery();
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
             }
 
             DialogResult rs = MessageBox.Show(create_user, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);

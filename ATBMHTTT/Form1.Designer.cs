@@ -53,8 +53,11 @@ namespace ATBMHTTT
             this.viewPrivilegesBtn = new System.Windows.Forms.Button();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
@@ -78,6 +81,7 @@ namespace ATBMHTTT
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.btnView);
             this.tabPage1.Controls.Add(this.dataGridViewUser);
             this.tabPage1.Controls.Add(this.btnViewRole);
@@ -105,7 +109,7 @@ namespace ATBMHTTT
             // dataGridViewUser
             // 
             this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUser.Location = new System.Drawing.Point(54, 136);
+            this.dataGridViewUser.Location = new System.Drawing.Point(54, 185);
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.RowHeadersWidth = 51;
             this.dataGridViewUser.RowTemplate.Height = 24;
@@ -144,6 +148,8 @@ namespace ATBMHTTT
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label10);
@@ -296,14 +302,14 @@ namespace ATBMHTTT
             // userNameTextBox
             // 
             this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTextBox.Location = new System.Drawing.Point(315, 56);
+            this.userNameTextBox.Location = new System.Drawing.Point(177, 56);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(251, 30);
             this.userNameTextBox.TabIndex = 19;
             // 
             // viewPrivilegesBtn
             // 
-            this.viewPrivilegesBtn.Location = new System.Drawing.Point(641, 56);
+            this.viewPrivilegesBtn.Location = new System.Drawing.Point(503, 56);
             this.viewPrivilegesBtn.Name = "viewPrivilegesBtn";
             this.viewPrivilegesBtn.Size = new System.Drawing.Size(95, 30);
             this.viewPrivilegesBtn.TabIndex = 18;
@@ -315,7 +321,7 @@ namespace ATBMHTTT
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(166, 61);
+            this.userNameLabel.Location = new System.Drawing.Point(23, 59);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(128, 25);
             this.userNameLabel.TabIndex = 17;
@@ -333,6 +339,15 @@ namespace ATBMHTTT
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(414, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
@@ -344,14 +359,35 @@ namespace ATBMHTTT
             this.tabPage4.Text = "Cấp quyền";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(414, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(653, 54);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 30);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Thêm user";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.themuser_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(800, 54);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(98, 30);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Thêm role";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.themrole_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(54, 118);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(204, 39);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Thêm bảng";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -403,6 +439,9 @@ namespace ATBMHTTT
         private System.Windows.Forms.Button btnViewTable;
         private System.Windows.Forms.Button btnViewUser;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

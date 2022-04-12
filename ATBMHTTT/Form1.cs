@@ -328,5 +328,11 @@ namespace ATBMHTTT
             }
             conn.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ThemBang tb = new ThemBang();
+            tb.Show();
+        }
     }
 }

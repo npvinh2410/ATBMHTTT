@@ -62,17 +62,24 @@ namespace ATBMHTTT
             {
                 conn.Open();
 
-                OracleCommand command = new OracleCommand(createtable, conn);
+                OracleCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = createtable;
+
+
+                cmd.ExecuteNonQuery();
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
+            finally
+            {
+                conn.Close();
+            }
 
-            conn.Close();
 
-            
 
             DialogResult rs = MessageBox.Show("Bạn đã thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
 
