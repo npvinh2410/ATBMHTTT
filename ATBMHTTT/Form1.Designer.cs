@@ -31,6 +31,11 @@ namespace ATBMHTTT
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnView = new System.Windows.Forms.Button();
+            this.dataGridViewUser = new System.Windows.Forms.DataGridView();
+            this.btnViewRole = new System.Windows.Forms.Button();
+            this.btnViewTable = new System.Windows.Forms.Button();
+            this.btnViewUser = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -49,16 +54,13 @@ namespace ATBMHTTT
             this.userNameLabel = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnView = new System.Windows.Forms.Button();
-            this.dataGridViewUser = new System.Windows.Forms.DataGridView();
-            this.btnViewRole = new System.Windows.Forms.Button();
-            this.btnViewTable = new System.Windows.Forms.Button();
-            this.btnViewUser = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -89,6 +91,56 @@ namespace ATBMHTTT
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Xem DS các đối tượng";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(779, 49);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(204, 38);
+            this.btnView.TabIndex = 9;
+            this.btnView.Text = "Xem DS View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // dataGridViewUser
+            // 
+            this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUser.Location = new System.Drawing.Point(54, 136);
+            this.dataGridViewUser.Name = "dataGridViewUser";
+            this.dataGridViewUser.RowHeadersWidth = 51;
+            this.dataGridViewUser.RowTemplate.Height = 24;
+            this.dataGridViewUser.Size = new System.Drawing.Size(929, 349);
+            this.dataGridViewUser.TabIndex = 8;
+            // 
+            // btnViewRole
+            // 
+            this.btnViewRole.Location = new System.Drawing.Point(538, 49);
+            this.btnViewRole.Name = "btnViewRole";
+            this.btnViewRole.Size = new System.Drawing.Size(204, 38);
+            this.btnViewRole.TabIndex = 7;
+            this.btnViewRole.Text = "Xem DS Role";
+            this.btnViewRole.UseVisualStyleBackColor = true;
+            this.btnViewRole.Click += new System.EventHandler(this.btnViewRole_Click);
+            // 
+            // btnViewTable
+            // 
+            this.btnViewTable.Location = new System.Drawing.Point(294, 48);
+            this.btnViewTable.Name = "btnViewTable";
+            this.btnViewTable.Size = new System.Drawing.Size(204, 39);
+            this.btnViewTable.TabIndex = 6;
+            this.btnViewTable.Text = "Xem DS Table";
+            this.btnViewTable.UseVisualStyleBackColor = true;
+            this.btnViewTable.Click += new System.EventHandler(this.btnViewTable_Click);
+            // 
+            // btnViewUser
+            // 
+            this.btnViewUser.Location = new System.Drawing.Point(54, 48);
+            this.btnViewUser.Name = "btnViewUser";
+            this.btnViewUser.Size = new System.Drawing.Size(204, 39);
+            this.btnViewUser.TabIndex = 5;
+            this.btnViewUser.Text = "Xem DS User";
+            this.btnViewUser.UseVisualStyleBackColor = true;
+            this.btnViewUser.Click += new System.EventHandler(this.btnViewUser_Click);
             // 
             // tabPage2
             // 
@@ -271,6 +323,7 @@ namespace ATBMHTTT
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
@@ -291,55 +344,14 @@ namespace ATBMHTTT
             this.tabPage4.Text = "Cấp quyền";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // btnView
+            // button1
             // 
-            this.btnView.Location = new System.Drawing.Point(779, 49);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(204, 38);
-            this.btnView.TabIndex = 9;
-            this.btnView.Text = "Xem DS View";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
-            // dataGridViewUser
-            // 
-            this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUser.Location = new System.Drawing.Point(54, 136);
-            this.dataGridViewUser.Name = "dataGridViewUser";
-            this.dataGridViewUser.RowHeadersWidth = 51;
-            this.dataGridViewUser.RowTemplate.Height = 24;
-            this.dataGridViewUser.Size = new System.Drawing.Size(929, 349);
-            this.dataGridViewUser.TabIndex = 8;
-            // 
-            // btnViewRole
-            // 
-            this.btnViewRole.Location = new System.Drawing.Point(538, 49);
-            this.btnViewRole.Name = "btnViewRole";
-            this.btnViewRole.Size = new System.Drawing.Size(204, 38);
-            this.btnViewRole.TabIndex = 7;
-            this.btnViewRole.Text = "Xem DS Role";
-            this.btnViewRole.UseVisualStyleBackColor = true;
-            this.btnViewRole.Click += new System.EventHandler(this.btnViewRole_Click);
-            // 
-            // btnViewTable
-            // 
-            this.btnViewTable.Location = new System.Drawing.Point(294, 48);
-            this.btnViewTable.Name = "btnViewTable";
-            this.btnViewTable.Size = new System.Drawing.Size(204, 39);
-            this.btnViewTable.TabIndex = 6;
-            this.btnViewTable.Text = "Xem DS Table";
-            this.btnViewTable.UseVisualStyleBackColor = true;
-            this.btnViewTable.Click += new System.EventHandler(this.btnViewTable_Click);
-            // 
-            // btnViewUser
-            // 
-            this.btnViewUser.Location = new System.Drawing.Point(54, 48);
-            this.btnViewUser.Name = "btnViewUser";
-            this.btnViewUser.Size = new System.Drawing.Size(204, 39);
-            this.btnViewUser.TabIndex = 5;
-            this.btnViewUser.Text = "Xem DS User";
-            this.btnViewUser.UseVisualStyleBackColor = true;
-            this.btnViewUser.Click += new System.EventHandler(this.btnViewUser_Click);
+            this.button1.Location = new System.Drawing.Point(414, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -354,10 +366,11 @@ namespace ATBMHTTT
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -389,6 +402,7 @@ namespace ATBMHTTT
         private System.Windows.Forms.Button btnViewRole;
         private System.Windows.Forms.Button btnViewTable;
         private System.Windows.Forms.Button btnViewUser;
+        private System.Windows.Forms.Button button1;
     }
 }
 
