@@ -289,7 +289,7 @@ namespace ATBMHTTT
             {
                 conn.Open();
                 string sqlString = "";
-                sqlString = "SELECT GRANTEE, OWNER, TABLE_NAME, GRANTOR, PRIVILEGE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                sqlString = "SELECT GRANTEE, GRANTED_ROLE FROM DBA_ROLE_PRIVS WHERE GRANTED_ROLE = '" + Login_Info.USERNAME + "'";
                 OracleCommand command = new OracleCommand(sqlString, conn);
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);
