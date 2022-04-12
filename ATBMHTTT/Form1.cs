@@ -68,5 +68,17 @@ namespace ATBMHTTT
                 conn.Close();
             }
         }
+
+        private void themuser_Click(object sender, EventArgs e)
+        {
+            ThemUser user = new ThemUser();
+            user.Show();
+        }
+
+        private void themrole_Click(object sender, EventArgs e)
+        {
+            ThemRole role = new ThemRole();
+            role.Show();
+        }
     }
 }
