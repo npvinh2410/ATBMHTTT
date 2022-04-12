@@ -36,6 +36,8 @@ namespace ATBMHTTT
             else
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
+                txtTaiKhoan.Text = "";
+                txtMatKhau.Text = "";
             }
         }
 

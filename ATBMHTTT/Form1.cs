@@ -232,5 +232,101 @@ namespace ATBMHTTT
 
             loadPrivilegesOfUser(textBox1.Text);
         }
+
+        private void btnViewUser_Click(object sender, EventArgs e)
+        {
+            dataGridViewUser.DataSource = null;
+            OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+            try
+            {
+                conn.Open();
+                string sqlString = "";
+                sqlString = "SELECT USERNAME, USER_ID, CREATED, DEFAULT_COLLATION FROM ALL_USERS";
+                OracleCommand command = new OracleCommand(sqlString, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+                dataGridViewUser.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            conn.Close();
+        }
+
+        private void btnViewTable_Click(object sender, EventArgs e)
+        {
+            dataGridViewUser.DataSource = null;
+            OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+            try
+            {
+                conn.Open();
+                string sqlString = "";
+                sqlString = "SELECT TABLE_NAME, OWNER, TABLESPACE_NAME, CLUSTER_NAME FROM ALL_TABLES WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                OracleCommand command = new OracleCommand(sqlString, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+                dataGridViewUser.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            conn.Close();
+        }
+
+        private void btnViewRole_Click(object sender, EventArgs e)
+        {
+            dataGridViewUser.DataSource = null;
+            OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+            try
+            {
+                conn.Open();
+                string sqlString = "";
+                sqlString = "SELECT GRANTEE, OWNER, TABLE_NAME, GRANTOR, PRIVILEGE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                OracleCommand command = new OracleCommand(sqlString, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+                dataGridViewUser.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            conn.Close();
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            dataGridViewUser.DataSource = null;
+            OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+            try
+            {
+                conn.Open();
+                string sqlString = "";
+                sqlString = "SELECT VIEW_NAME, OWNER, TEXT_LENGTH FROM all_Views WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                OracleCommand command = new OracleCommand(sqlString, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+                dataGridViewUser.DataSource = dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            conn.Close();
+        }
     }
 }

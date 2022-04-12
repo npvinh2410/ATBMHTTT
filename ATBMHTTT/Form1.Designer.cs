@@ -32,8 +32,10 @@ namespace ATBMHTTT
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.privilegesGridView = new System.Windows.Forms.DataGridView();
@@ -45,13 +47,18 @@ namespace ATBMHTTT
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.viewPrivilegesBtn = new System.Windows.Forms.Button();
             this.userNameLabel = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnView = new System.Windows.Forms.Button();
+            this.dataGridViewUser = new System.Windows.Forms.DataGridView();
+            this.btnViewRole = new System.Windows.Forms.Button();
+            this.btnViewTable = new System.Windows.Forms.Button();
+            this.btnViewUser = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -69,13 +76,18 @@ namespace ATBMHTTT
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnView);
+            this.tabPage1.Controls.Add(this.dataGridViewUser);
+            this.tabPage1.Controls.Add(this.btnViewRole);
+            this.tabPage1.Controls.Add(this.btnViewTable);
+            this.tabPage1.Controls.Add(this.btnViewUser);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Size = new System.Drawing.Size(1051, 622);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Xem DS các đối tượng";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -104,27 +116,45 @@ namespace ATBMHTTT
             this.tabPage2.Text = "Thông tin quyền user/role (Của Trí)";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // label14
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1051, 622);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(7, 504);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(134, 25);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "TABLE/VIEW";
             // 
-            // tabPage4
+            // label13
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Size = new System.Drawing.Size(1051, 622);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Cấp quyền";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(444, 451);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(173, 25);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "ASSIGNED ROLE";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(492, 506);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 25);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "PRIVILEGE";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(34, 447);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 25);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "GRANTEE";
             // 
             // textBox4
             // 
@@ -239,45 +269,77 @@ namespace ATBMHTTT
             this.userNameLabel.TabIndex = 17;
             this.userNameLabel.Text = "Tên user/role";
             // 
-            // label9
+            // tabPage3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(34, 447);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 25);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "GRANTEE";
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Size = new System.Drawing.Size(1051, 622);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // tabPage4
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(492, 506);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 25);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "PRIVILEGE";
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Size = new System.Drawing.Size(1051, 622);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Cấp quyền";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // btnView
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(444, 451);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(173, 25);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "ASSIGNED ROLE";
+            this.btnView.Location = new System.Drawing.Point(779, 49);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(204, 38);
+            this.btnView.TabIndex = 9;
+            this.btnView.Text = "Xem DS View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // label14
+            // dataGridViewUser
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(7, 504);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(134, 25);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "TABLE/VIEW";
+            this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUser.Location = new System.Drawing.Point(54, 136);
+            this.dataGridViewUser.Name = "dataGridViewUser";
+            this.dataGridViewUser.RowHeadersWidth = 51;
+            this.dataGridViewUser.RowTemplate.Height = 24;
+            this.dataGridViewUser.Size = new System.Drawing.Size(929, 349);
+            this.dataGridViewUser.TabIndex = 8;
+            // 
+            // btnViewRole
+            // 
+            this.btnViewRole.Location = new System.Drawing.Point(538, 49);
+            this.btnViewRole.Name = "btnViewRole";
+            this.btnViewRole.Size = new System.Drawing.Size(204, 38);
+            this.btnViewRole.TabIndex = 7;
+            this.btnViewRole.Text = "Xem DS Role";
+            this.btnViewRole.UseVisualStyleBackColor = true;
+            this.btnViewRole.Click += new System.EventHandler(this.btnViewRole_Click);
+            // 
+            // btnViewTable
+            // 
+            this.btnViewTable.Location = new System.Drawing.Point(294, 48);
+            this.btnViewTable.Name = "btnViewTable";
+            this.btnViewTable.Size = new System.Drawing.Size(204, 39);
+            this.btnViewTable.TabIndex = 6;
+            this.btnViewTable.Text = "Xem DS Table";
+            this.btnViewTable.UseVisualStyleBackColor = true;
+            this.btnViewTable.Click += new System.EventHandler(this.btnViewTable_Click);
+            // 
+            // btnViewUser
+            // 
+            this.btnViewUser.Location = new System.Drawing.Point(54, 48);
+            this.btnViewUser.Name = "btnViewUser";
+            this.btnViewUser.Size = new System.Drawing.Size(204, 39);
+            this.btnViewUser.TabIndex = 5;
+            this.btnViewUser.Text = "Xem DS User";
+            this.btnViewUser.UseVisualStyleBackColor = true;
+            this.btnViewUser.Click += new System.EventHandler(this.btnViewUser_Click);
             // 
             // Form1
             // 
@@ -291,9 +353,11 @@ namespace ATBMHTTT
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,6 +384,11 @@ namespace ATBMHTTT
         private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.Button viewPrivilegesBtn;
         private System.Windows.Forms.Label userNameLabel;
+        private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.DataGridView dataGridViewUser;
+        private System.Windows.Forms.Button btnViewRole;
+        private System.Windows.Forms.Button btnViewTable;
+        private System.Windows.Forms.Button btnViewUser;
     }
 }
 

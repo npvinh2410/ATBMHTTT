@@ -148,6 +148,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form2_Login";
             this.Text = "Form2_Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_Login_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
