@@ -59,7 +59,7 @@ namespace ATBMHTTT
             this.panel2.Controls.Add(this.tbl1);
             this.panel2.Location = new System.Drawing.Point(394, 31);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(567, 349);
+            this.panel2.Size = new System.Drawing.Size(576, 349);
             this.panel2.TabIndex = 9;
             // 
             // tbl1
@@ -70,7 +70,7 @@ namespace ATBMHTTT
             this.tbl1.ColumnCount = 3;
             this.tbl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
             this.tbl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
-            this.tbl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tbl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
             this.tbl1.Controls.Add(this.flp2, 1, 1);
             this.tbl1.Controls.Add(this.lbCol, 0, 0);
             this.tbl1.Controls.Add(this.lbType, 1, 0);
@@ -82,7 +82,7 @@ namespace ATBMHTTT
             this.tbl1.RowCount = 2;
             this.tbl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tbl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tbl1.Size = new System.Drawing.Size(563, 343);
+            this.tbl1.Size = new System.Drawing.Size(570, 343);
             this.tbl1.TabIndex = 0;
             // 
             // flp2
@@ -117,7 +117,7 @@ namespace ATBMHTTT
             // 
             this.lbpk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbpk.AutoSize = true;
-            this.lbpk.Location = new System.Drawing.Point(444, 13);
+            this.lbpk.Location = new System.Drawing.Point(448, 13);
             this.lbpk.Name = "lbpk";
             this.lbpk.Size = new System.Drawing.Size(82, 17);
             this.lbpk.TabIndex = 2;
@@ -138,7 +138,7 @@ namespace ATBMHTTT
             this.flp3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp3.Location = new System.Drawing.Point(412, 46);
             this.flp3.Name = "flp3";
-            this.flp3.Size = new System.Drawing.Size(146, 293);
+            this.flp3.Size = new System.Drawing.Size(154, 293);
             this.flp3.TabIndex = 10;
             // 
             // Huy
