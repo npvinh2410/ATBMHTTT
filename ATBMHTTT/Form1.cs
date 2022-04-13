@@ -18,12 +18,27 @@ namespace ATBMHTTT
         {
             InitializeComponent();
             loadHideTextbox();
+            if(cbbuser_table.Text=="")
+            {
+                cbbuser_collum.Text = "none";
+                cbbuser_collum.Enabled = false;
+            }
+            if (cbbrole_table.Text == "")
+            {
+                cbbrole_collum.Text = "none";
+                cbbrole_collum.Enabled = false;
+            }
+
+            //
+            //loadData();
         }
 
         private void loadHideTextbox()
         {
             textBox4.Hide();
         }
+
+        
 
 
         private void viewPrivilegesBtn_Click(object sender, EventArgs e)
@@ -333,6 +348,344 @@ namespace ATBMHTTT
         {
             ThemBang tb = new ThemBang();
             tb.Show();
+        }
+
+        private void btuser_capquyen_Click(object sender, EventArgs e)
+        {
+            
+            if (cbbuser_collum.Text == "" || cbbuser_permission.Text == "" || cbbuser_table.Text == "" || cbbuser_user.Text == "")
+            {
+                MessageBox.Show("Bạn cần nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+                DialogResult dialogResult;
+                dialogResult = MessageBox.Show("Bạn có đồng ý cấp quyền này cho user không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.No)
+                    return;
+
+                try
+                {
+                    conn.Open();
+                    string grantQuery;
+                    string name_user = cbbuser_user.Text;
+                    string table = cbbuser_table.Text;
+                    string collumn = cbbuser_collum.Text;
+                    string permission = cbbuser_permission.Text;
+                    bool check = ckbgrant.CheckState == CheckState.Checked ? true : false;
+                    if (check == true)
+                    {
+                        if(cbbuser_permission.Text=="SELECT"|| cbbuser_permission.Text == "INSERT")
+                        {
+                            grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_user + " WITH GRANT OPTION";
+                        }   
+                        else
+                        {
+                            grantQuery = "GRANT " + permission + " ON " + table + " TO " + name_user + " WITH GRANT OPTION";
+                        }
+                    }
+                    else
+                    {
+                        if (cbbuser_permission.Text == "SELECT" || cbbuser_permission.Text == "INSERT")
+                        {
+                            grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_user;
+                        }
+                        else
+                        {
+                            grantQuery = "GRANT " + permission + " ON " + table + " TO " + name_user;
+                        }
+                    }
+
+                    OracleCommand cmd = conn.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = grantQuery;
+
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Cấp quyền cho user thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        private void btrole_capquyen_Click(object sender, EventArgs e)
+        {
+            
+            if (cbbrole_collum.Text == "" || cbbrole_permission.Text == "" || cbbrole_table.Text == "" || cbbrole_role.Text == "")
+            {
+                MessageBox.Show("Bạn cần nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+                DialogResult dialogResult;
+                dialogResult = MessageBox.Show("Bạn có đồng ý cấp quyền này cho user không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.No)
+                    return;
+                try
+                {
+                    conn.Open();
+                    string grantQuery;
+                    string name_role = cbbrole_role.Text;
+                    string table = cbbrole_table.Text;
+                    string collumn = cbbrole_collum.Text;
+                    string permission = cbbrole_permission.Text;
+                    if (cbbuser_permission.Text == "SELECT" || cbbuser_permission.Text == "INSERT")
+                    {
+                        grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_role;
+                    }
+                    else
+                    {
+                        grantQuery = "GRANT " + permission + " ON " + table + " TO " + name_role;
+                    }
+
+                    OracleCommand cmd = conn.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = grantQuery;
+
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Cấp quyền cho role thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+        }
+
+        private void bt_capquyen_Click(object sender, EventArgs e)
+        {
+            if (cbbuser.Text == "" || cbbrole.Text == "")
+            {
+                MessageBox.Show("Bạn cần nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+                DialogResult dialogResult;
+                dialogResult = MessageBox.Show("Bạn có đồng ý cấp role này cho user không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.No)
+                    return;
+                try
+                {
+                    conn.Open();
+                    string grantQuery;
+                    string name_role = cbbrole.Text;
+                    string name_user = cbbuser.Text;
+                    grantQuery = "GRANT " + name_role +" TO " + name_user;
+
+                    OracleCommand cmd = conn.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = grantQuery;
+
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Cấp role cho user thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+
+            }
+        }
+
+        private void cbbuser_permission_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem != null)
+            {
+                if (cbbuser_permission.Text == "DELETE" || cbbuser_permission.Text == "INSERT"||cbbuser_table.Text=="")
+                {
+                    cbbuser_collum.Text = "none";
+                    cbbuser_collum.Enabled = false;
+                }
+                else
+                {
+                    cbbuser_collum.Enabled = true;
+                    cbbuser_collum.Text = null;
+                }
+            }
+        }
+
+        private void cbbrole_permission_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem != null)
+            {
+                if (cbbrole_permission.Text == "DELETE" || cbbrole_permission.Text == "INSERT"||cbbrole_table.Text=="")
+                {
+                    cbbrole_collum.Text = "none";
+                    cbbrole_collum.Enabled = false;
+                }
+                else
+                {
+                    cbbrole_collum.Enabled = true;
+                    cbbrole_collum.Text = null;
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+            try
+            {
+                conn.Open();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    cbbrole_table.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+                    cbbuser_table.Items.Add(ds.Tables[0].Rows[i][0].ToString());                    
+                }
+                cmd.CommandText = "SELECT USERNAME FROM ALL_USERS";
+                OracleDataAdapter da1 = new OracleDataAdapter(cmd);
+                DataSet ds1 = new DataSet();
+                da1.Fill(ds1);
+                for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
+                {
+                    cbbuser_user.Items.Add(ds1.Tables[0].Rows[i][0].ToString());
+                    cbbuser.Items.Add(ds1.Tables[0].Rows[i][0].ToString());
+                }
+                cmd.CommandText = "SELECT GRANTEE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                OracleDataAdapter da2 = new OracleDataAdapter(cmd);
+                DataSet ds2 = new DataSet();
+                da2.Fill(ds2);
+                for (int i = 0; i < ds2.Tables[0].Rows.Count; i++)
+                {
+                    cbbrole_role.Items.Add(ds2.Tables[0].Rows[i][0].ToString());
+                    cbbrole.Items.Add(ds2.Tables[0].Rows[i][0].ToString());
+                }    
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+        }
+
+        private void cbbuser_table_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem != null)
+            {
+                if (cbbuser_table.Text != ""&& cbbuser_permission.Text != "DELETE" && cbbuser_permission.Text != "INSERT"&& cbbuser_permission.Text !="")
+                {
+                    cbbuser_collum.Enabled = true;
+                    cbbuser_collum.Text=null;
+                    OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+                    try
+                    {
+                        conn.Open();
+                        OracleCommand cmd = new OracleCommand();
+                        cmd.Connection = conn;
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "SELECT COLUMN_NAME FROM USER_TAB_COLUMNS WHERE TABLE_NAME= '" + cbbuser_table.Text +"'";
+                        OracleDataAdapter da = new OracleDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        da.Fill(ds);
+                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            cbbuser_collum.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                    finally
+                    {
+                        conn.Close();
+
+                    }
+
+                }
+            }
+
+        }
+
+        private void cbbuser_collum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                
+        }
+
+        private void cbbrole_table_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem != null)
+            {
+                if (cbbrole_table.Text != ""&& cbbrole_permission.Text != "DELETE" && cbbrole_permission.Text != "INSERT"&& cbbrole_permission.Text !="")
+                {
+                    cbbrole_collum.Enabled = true;
+                    cbbrole_collum = null;
+                    OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+                    try
+                    {
+                        conn.Open();
+                        OracleCommand cmd = new OracleCommand();
+                        cmd.Connection = conn;
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "SELECT COLUMN_NAME FROM USER_TAB_COLUMNS WHERE TABLE_NAME= '" + cbbrole_table.Text + "'";
+                        OracleDataAdapter da = new OracleDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        da.Fill(ds);
+                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            cbbrole_collum.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                    finally
+                    {
+                        conn.Close();
+
+                    }
+
+                }
+            }
         }
     }
 }
