@@ -376,7 +376,7 @@ namespace ATBMHTTT
                     bool check = ckbgrant.CheckState == CheckState.Checked ? true : false;
                     if (check == true)
                     {
-                        if(cbbuser_permission.Text=="SELECT"|| cbbuser_permission.Text == "INSERT")
+                        if(cbbuser_permission.Text=="UPDATE"|| cbbuser_permission.Text == "INSERT")
                         {
                             grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_user + " WITH GRANT OPTION";
                         }   
@@ -387,7 +387,7 @@ namespace ATBMHTTT
                     }
                     else
                     {
-                        if (cbbuser_permission.Text == "SELECT" || cbbuser_permission.Text == "INSERT")
+                        if (cbbuser_permission.Text == "UPDATE" || cbbuser_permission.Text == "INSERT")
                         {
                             grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_user;
                         }
@@ -440,7 +440,7 @@ namespace ATBMHTTT
                     string table = cbbrole_table.Text;
                     string collumn = cbbrole_collum.Text;
                     string permission = cbbrole_permission.Text;
-                    if (cbbuser_permission.Text == "SELECT" || cbbuser_permission.Text == "INSERT")
+                    if (cbbuser_permission.Text == "UPDATE" || cbbuser_permission.Text == "INSERT")
                     {
                         grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_role;
                     }
@@ -520,7 +520,7 @@ namespace ATBMHTTT
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem != null)
             {
-                if (cbbuser_permission.Text == "DELETE" || cbbuser_permission.Text == "INSERT"||cbbuser_table.Text=="")
+                if (cbbuser_permission.Text == "DELETE" || cbbuser_permission.Text == "SELECT"||cbbuser_table.Text=="")
                 {
                     cbbuser_collum.Text = "none";
                     cbbuser_collum.Enabled = false;
@@ -538,7 +538,7 @@ namespace ATBMHTTT
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem != null)
             {
-                if (cbbrole_permission.Text == "DELETE" || cbbrole_permission.Text == "INSERT"||cbbrole_table.Text=="")
+                if (cbbrole_permission.Text == "DELETE" || cbbrole_permission.Text == "SELECT"||cbbrole_table.Text=="")
                 {
                     cbbrole_collum.Text = "none";
                     cbbrole_collum.Enabled = false;
@@ -605,7 +605,7 @@ namespace ATBMHTTT
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem != null)
             {
-                if (cbbuser_table.Text != ""&& cbbuser_permission.Text != "DELETE" && cbbuser_permission.Text != "INSERT"&& cbbuser_permission.Text !="")
+                if (cbbuser_table.Text != ""&& cbbuser_permission.Text != "DELETE" && cbbuser_permission.Text != "SELECT"&& cbbuser_permission.Text !="")
                 {
                     cbbuser_collum.Enabled = true;
                     cbbuser_collum.Text=null;
@@ -652,10 +652,10 @@ namespace ATBMHTTT
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem != null)
             {
-                if (cbbrole_table.Text != ""&& cbbrole_permission.Text != "DELETE" && cbbrole_permission.Text != "INSERT"&& cbbrole_permission.Text !="")
+                if (cbbrole_table.Text != ""&& cbbrole_permission.Text != "DELETE" && cbbrole_permission.Text != "SELECT"&& cbbrole_permission.Text !="")
                 {
                     cbbrole_collum.Enabled = true;
-                    cbbrole_collum = null;
+                    cbbrole_collum.Text = null;
                     OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
                     try
                     {
@@ -670,9 +670,7 @@ namespace ATBMHTTT
                         for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                         {
                             cbbrole_collum.Items.Add(ds.Tables[0].Rows[i][0].ToString());
-                        }
-
-
+                        }                       
                     }
                     catch (Exception ex)
                     {
