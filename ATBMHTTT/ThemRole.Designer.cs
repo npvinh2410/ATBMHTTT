@@ -57,6 +57,7 @@ namespace ATBMHTTT
             // 
             // Huy
             // 
+            this.Huy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Huy.Location = new System.Drawing.Point(298, 149);
             this.Huy.Name = "Huy";
             this.Huy.Size = new System.Drawing.Size(82, 32);
@@ -77,8 +78,10 @@ namespace ATBMHTTT
             // 
             // ThemRole
             // 
+            this.AcceptButton = this.Them;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Huy;
             this.ClientSize = new System.Drawing.Size(411, 217);
             this.Controls.Add(this.tbrole);
             this.Controls.Add(this.Role);

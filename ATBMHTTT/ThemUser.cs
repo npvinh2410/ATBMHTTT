@@ -25,18 +25,21 @@ namespace ATBMHTTT
         {
             
 
-            create_user += tbuser.Text + " identified by " + tbpass.Text + ";";
+            create_user += tbuser.Text + " identified by " + tbpass.Text ;
 
             OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
             try
             {
                 conn.Open();
 
+                OracleCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "alter session set \"_ORACLE_SCRIPT\"=true";
+                cmd2.ExecuteNonQuery();
+
                 OracleCommand cmd = conn.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = create_user;
-
-
                 cmd.ExecuteNonQuery();
 
             }

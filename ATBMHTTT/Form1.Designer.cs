@@ -38,8 +38,6 @@ namespace ATBMHTTT
             this.btnViewTable = new System.Windows.Forms.Button();
             this.btnViewUser = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,7 +56,6 @@ namespace ATBMHTTT
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbbuser = new System.Windows.Forms.ComboBox();
-            this.cbbrole = new System.Windows.Forms.ComboBox();
             this.bt_capquyen = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -66,7 +63,6 @@ namespace ATBMHTTT
             this.cbbrole_permission = new System.Windows.Forms.ComboBox();
             this.cbbrole_table = new System.Windows.Forms.ComboBox();
             this.cbbrole_collum = new System.Windows.Forms.ComboBox();
-            this.cbbrole_role = new System.Windows.Forms.ComboBox();
             this.btrole_capquyen = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -83,6 +79,10 @@ namespace ATBMHTTT
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.roleNamePrivilege = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.cbbrole = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
@@ -108,6 +108,8 @@ namespace ATBMHTTT
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.btnView);
             this.tabPage1.Controls.Add(this.dataGridViewUser);
@@ -125,11 +127,11 @@ namespace ATBMHTTT
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(54, 118);
+            this.button4.Location = new System.Drawing.Point(294, 118);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(204, 39);
             this.button4.TabIndex = 10;
-            this.button4.Text = "Thêm bảng";
+            this.button4.Text = "Thêm Table";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -185,13 +187,10 @@ namespace ATBMHTTT
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.textBox4);
             this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.privilegesGridView);
             this.tabPage2.Controls.Add(this.comboBox1);
@@ -202,6 +201,7 @@ namespace ATBMHTTT
             this.tabPage2.Controls.Add(this.userNameTextBox);
             this.tabPage2.Controls.Add(this.viewPrivilegesBtn);
             this.tabPage2.Controls.Add(this.userNameLabel);
+            this.tabPage2.Controls.Add(this.textBox4);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
@@ -210,26 +210,6 @@ namespace ATBMHTTT
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thông tin quyền user/role";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(800, 54);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 30);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Thêm role";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.themrole_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(653, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 30);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Thêm user";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.themuser_Click);
             // 
             // label14
             // 
@@ -245,7 +225,7 @@ namespace ATBMHTTT
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(444, 451);
+            this.label13.Location = new System.Drawing.Point(449, 447);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(173, 25);
             this.label13.TabIndex = 30;
@@ -255,7 +235,7 @@ namespace ATBMHTTT
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(492, 506);
+            this.label10.Location = new System.Drawing.Point(508, 504);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 25);
             this.label10.TabIndex = 29;
@@ -274,16 +254,16 @@ namespace ATBMHTTT
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(640, 537);
+            this.textBox4.Location = new System.Drawing.Point(795, 501);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(55, 30);
+            this.textBox4.Size = new System.Drawing.Size(10, 30);
             this.textBox4.TabIndex = 27;
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(641, 446);
+            this.textBox3.Location = new System.Drawing.Point(663, 446);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(225, 30);
@@ -292,11 +272,11 @@ namespace ATBMHTTT
             // privilegesGridView
             // 
             this.privilegesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.privilegesGridView.Location = new System.Drawing.Point(28, 131);
+            this.privilegesGridView.Location = new System.Drawing.Point(74, 131);
             this.privilegesGridView.Name = "privilegesGridView";
             this.privilegesGridView.RowHeadersWidth = 51;
             this.privilegesGridView.RowTemplate.Height = 24;
-            this.privilegesGridView.Size = new System.Drawing.Size(870, 251);
+            this.privilegesGridView.Size = new System.Drawing.Size(814, 251);
             this.privilegesGridView.TabIndex = 20;
             this.privilegesGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.privilegesGridView_CellClick);
             // 
@@ -313,7 +293,7 @@ namespace ATBMHTTT
             "ALTER",
             "INDEX",
             "ALL"});
-            this.comboBox1.Location = new System.Drawing.Point(640, 498);
+            this.comboBox1.Location = new System.Drawing.Point(662, 498);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(226, 33);
             this.comboBox1.TabIndex = 25;
@@ -338,7 +318,7 @@ namespace ATBMHTTT
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(928, 476);
+            this.edit.Location = new System.Drawing.Point(924, 474);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(95, 30);
             this.edit.TabIndex = 22;
@@ -348,7 +328,7 @@ namespace ATBMHTTT
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(928, 246);
+            this.delete.Location = new System.Drawing.Point(924, 244);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(95, 30);
             this.delete.TabIndex = 21;
@@ -359,16 +339,16 @@ namespace ATBMHTTT
             // userNameTextBox
             // 
             this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTextBox.Location = new System.Drawing.Point(177, 56);
+            this.userNameTextBox.Location = new System.Drawing.Point(323, 53);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(251, 30);
+            this.userNameTextBox.Size = new System.Drawing.Size(271, 30);
             this.userNameTextBox.TabIndex = 19;
             // 
             // viewPrivilegesBtn
             // 
-            this.viewPrivilegesBtn.Location = new System.Drawing.Point(503, 56);
+            this.viewPrivilegesBtn.Location = new System.Drawing.Point(640, 53);
             this.viewPrivilegesBtn.Name = "viewPrivilegesBtn";
-            this.viewPrivilegesBtn.Size = new System.Drawing.Size(95, 30);
+            this.viewPrivilegesBtn.Size = new System.Drawing.Size(93, 30);
             this.viewPrivilegesBtn.TabIndex = 18;
             this.viewPrivilegesBtn.Text = "Xem";
             this.viewPrivilegesBtn.UseVisualStyleBackColor = true;
@@ -378,7 +358,7 @@ namespace ATBMHTTT
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(23, 61);
+            this.userNameLabel.Location = new System.Drawing.Point(156, 56);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(134, 25);
             this.userNameLabel.TabIndex = 17;
@@ -400,8 +380,8 @@ namespace ATBMHTTT
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.cbbuser);
             this.groupBox3.Controls.Add(this.cbbrole);
+            this.groupBox3.Controls.Add(this.cbbuser);
             this.groupBox3.Controls.Add(this.bt_capquyen);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
@@ -421,16 +401,6 @@ namespace ATBMHTTT
             this.cbbuser.Name = "cbbuser";
             this.cbbuser.Size = new System.Drawing.Size(199, 24);
             this.cbbuser.TabIndex = 12;
-            // 
-            // cbbrole
-            // 
-            this.cbbrole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbbrole.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbbrole.FormattingEnabled = true;
-            this.cbbrole.Location = new System.Drawing.Point(129, 26);
-            this.cbbrole.Name = "cbbrole";
-            this.cbbrole.Size = new System.Drawing.Size(199, 24);
-            this.cbbrole.TabIndex = 11;
             // 
             // bt_capquyen
             // 
@@ -466,10 +436,10 @@ namespace ATBMHTTT
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.roleNamePrivilege);
             this.groupBox2.Controls.Add(this.cbbrole_permission);
             this.groupBox2.Controls.Add(this.cbbrole_table);
             this.groupBox2.Controls.Add(this.cbbrole_collum);
-            this.groupBox2.Controls.Add(this.cbbrole_role);
             this.groupBox2.Controls.Add(this.btrole_capquyen);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
@@ -520,16 +490,6 @@ namespace ATBMHTTT
             this.cbbrole_collum.Name = "cbbrole_collum";
             this.cbbrole_collum.Size = new System.Drawing.Size(199, 24);
             this.cbbrole_collum.TabIndex = 12;
-            // 
-            // cbbrole_role
-            // 
-            this.cbbrole_role.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbbrole_role.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbbrole_role.FormattingEnabled = true;
-            this.cbbrole_role.Location = new System.Drawing.Point(131, 30);
-            this.cbbrole_role.Name = "cbbrole_role";
-            this.cbbrole_role.Size = new System.Drawing.Size(199, 24);
-            this.cbbrole_role.TabIndex = 11;
             // 
             // btrole_capquyen
             // 
@@ -715,8 +675,43 @@ namespace ATBMHTTT
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên User";
             // 
+            // roleNamePrivilege
+            // 
+            this.roleNamePrivilege.Location = new System.Drawing.Point(130, 31);
+            this.roleNamePrivilege.Name = "roleNamePrivilege";
+            this.roleNamePrivilege.Size = new System.Drawing.Size(200, 22);
+            this.roleNamePrivilege.TabIndex = 15;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(54, 118);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(204, 39);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Thêm User";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.themuser_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(538, 118);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(204, 39);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Thêm Role";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.themrole_Click);
+            // 
+            // cbbrole
+            // 
+            this.cbbrole.Location = new System.Drawing.Point(129, 25);
+            this.cbbrole.Name = "cbbrole";
+            this.cbbrole.Size = new System.Drawing.Size(200, 22);
+            this.cbbrole.TabIndex = 16;
+            // 
             // Form1
             // 
+            this.AcceptButton = this.viewPrivilegesBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
@@ -771,11 +766,8 @@ namespace ATBMHTTT
         private System.Windows.Forms.Button btnViewTable;
         private System.Windows.Forms.Button btnViewUser;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cbbuser;
-        private System.Windows.Forms.ComboBox cbbrole;
         private System.Windows.Forms.Button bt_capquyen;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -783,7 +775,6 @@ namespace ATBMHTTT
         private System.Windows.Forms.ComboBox cbbrole_permission;
         private System.Windows.Forms.ComboBox cbbrole_table;
         private System.Windows.Forms.ComboBox cbbrole_collum;
-        private System.Windows.Forms.ComboBox cbbrole_role;
         private System.Windows.Forms.Button btrole_capquyen;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -800,6 +791,10 @@ namespace ATBMHTTT
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox roleNamePrivilege;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox cbbrole;
     }
 }
 

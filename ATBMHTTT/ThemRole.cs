@@ -19,38 +19,42 @@ namespace ATBMHTTT
             InitializeComponent();
         }
 
-        string create_role = "create user ";
+        string create_role = "create role ";
 
         private void Them_Click(object sender, EventArgs e)
         {
-            create_role += tbrole.Text + ";";
+            create_role += tbrole.Text;
 
             OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
             try
             {
                 conn.Open();
 
+                OracleCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "alter session set \"_ORACLE_SCRIPT\"=true";
+                cmd2.ExecuteNonQuery();
+
                 OracleCommand cmd = conn.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = create_role;
-
-
                 cmd.ExecuteNonQuery();
-
+                DialogResult rs = MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                if (rs == DialogResult.OK)
+                    this.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             finally
             {
                 conn.Close();
             }
 
-            DialogResult rs = MessageBox.Show(create_role, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+           
 
-            if (rs == DialogResult.OK)
-                this.Close();
+            
         }
 
         private void Huy_Click(object sender, EventArgs e)

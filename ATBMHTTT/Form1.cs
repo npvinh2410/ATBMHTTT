@@ -52,7 +52,6 @@ namespace ATBMHTTT
             else
             {
                 loadPrivilegesOfUser(userName);
-                userNameTextBox.Text = "";
                 textBox2.Text = textBox3.Text = comboBox1.Text = "";
             }
         }
@@ -65,10 +64,10 @@ namespace ATBMHTTT
                 conn.Open();
                 string sqlString = "";
 
-                sqlString += "SELECT GRANTEE, TABLE_NAME, GRANTOR, PRIVILEGE, COMMON, TYPE FROM DBA_TAB_PRIVS" +
+                sqlString += "SELECT GRANTEE AS \"USER/GRANTED ROLE\", TABLE_NAME, GRANTOR, PRIVILEGE, TYPE FROM DBA_TAB_PRIVS" +
                                     " WHERE GRANTEE = '" + userNameOrRole + "'" +
                                     " OR GRANTEE IN(SELECT granted_role FROM DBA_ROLE_PRIVS" +
-                                    " WHERE GRANTEE = '" + userNameOrRole + "') ";
+                                    " WHERE GRANTEE = '" + userNameOrRole + "') ORDER BY GRANTEE";
                 textBox1.Text = userNameOrRole;
 
                 OracleCommand command = new OracleCommand(sqlString, conn);
@@ -105,7 +104,7 @@ namespace ATBMHTTT
         {
             textBox2.Text = textBox3.Text = comboBox1.Text = "";
 
-            string roleText = privilegesGridView["GRANTEE", e.RowIndex].Value.ToString();
+            string roleText = privilegesGridView["USER/GRANTED ROLE", e.RowIndex].Value.ToString();
             if (!roleText.Equals(textBox1.Text))
             {
                 textBox3.Text = roleText;
@@ -234,6 +233,8 @@ namespace ATBMHTTT
 
                 MessageBox.Show("Thu hồi quyền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                textBox3.Text = textBox2.Text = comboBox1.Text = "";
+                comboBox1.Items.Clear();
 
             }
             catch (Exception ex)
@@ -304,7 +305,8 @@ namespace ATBMHTTT
             {
                 conn.Open();
                 string sqlString = "";
-                sqlString = "SELECT GRANTEE, OWNER, TABLE_NAME, GRANTOR, PRIVILEGE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME.ToUpper() + "'";
+                //sqlString = "SELECT GRANTEE, OWNER, TABLE_NAME, GRANTOR, PRIVILEGE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME.ToUpper() + "'";
+                sqlString = "SELECT GRANTED_ROLE, ADMIN_OPTION, DELEGATE_OPTION, DEFAULT_ROLE, COMMON FROM USER_ROLE_PRIVS WHERE USERNAME= '" + Login_Info.USERNAME.ToUpper() + "' AND GRANTED_ROLE != 'DBA'";
                 OracleCommand command = new OracleCommand(sqlString, conn);
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);
@@ -353,7 +355,7 @@ namespace ATBMHTTT
         private void btuser_capquyen_Click(object sender, EventArgs e)
         {
             
-            if (cbbuser_collum.Text == "" || cbbuser_permission.Text == "" || cbbuser_table.Text == "" || cbbuser_user.Text == "")
+            if (cbbuser_permission.Text == "" || cbbuser_table.Text == "" || cbbuser_user.Text == "")
             {
                 MessageBox.Show("Bạn cần nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -375,60 +377,57 @@ namespace ATBMHTTT
                     string collumn = cbbuser_collum.Text;
                     string permission = cbbuser_permission.Text;
                     bool check = ckbgrant.CheckState == CheckState.Checked ? true : false;
+                    string grantOption = "";
                     if (check == true)
                     {
-                        if(cbbuser_permission.Text=="UPDATE")
+                        grantOption = " WITH GRANT OPTION";
+                    }
+
+                    if(cbbuser_permission.Text=="UPDATE")
+                    {
+                        if(collumn == "")
                         {
-                            grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_user + " WITH GRANT OPTION";
-                        }
-                        else if (cbbuser_permission.Text =="SELECT")
-                        {
-                            grantQuery1 = "CREATE VIEW " + name_user + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
-                            OracleCommand cmd1 = conn.CreateCommand();
-                            cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = grantQuery1;
-
-
-                            cmd1.ExecuteNonQuery();
-
-                            MessageBox.Show("Tạo view cho việc phân quyền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            grantQuery = "GRANT " + permission + " ON " + name_user + "_" + table + "_" + collumn + " TO " + name_user + " WITH GRANT OPTION";
+                            grantQuery = "GRANT " + permission + " ON " + table + " TO " + name_user + grantOption;
                         }
                         else
                         {
-                            grantQuery = "GRANT " + permission + " ON " + table + " TO " + name_user + " WITH GRANT OPTION";
+                            grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_user + grantOption;
                         }
+                    }
+                    else if (cbbuser_permission.Text =="SELECT")
+                    {
+                        if(collumn != "")
+                        {
+                            grantQuery1 = "CREATE OR REPLACE VIEW " + name_user + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
+                            grantQuery = "GRANT " + permission + " ON " + name_user + "_" + table + "_" + collumn + " TO " + name_user + grantOption;
+                        }
+                        else
+                        {
+                            grantQuery1 = "CREATE OR REPLACE VIEW " + name_user + "_" + table + " AS SELECT * FROM " + table;
+                            grantQuery = "GRANT " + permission + " ON " + name_user + "_" + table + " TO " + name_user + grantOption;
+                        }
+                        
+                        OracleCommand cmd1 = conn.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = grantQuery1;
+
+
+                        cmd1.ExecuteNonQuery();
+
+                        MessageBox.Show("Tạo view cho việc phân quyền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        
                     }
                     else
                     {
-                        if (cbbuser_permission.Text == "UPDATE")
-                        {
-                            grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_user;
-                        }
-                        else if(cbbuser_permission.Text == "SELECT")
-                        {
-                            grantQuery1 = "CREATE VIEW " + name_user + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
-                            OracleCommand cmd1 = conn.CreateCommand();
-                            cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = grantQuery1;
-
-
-                            cmd1.ExecuteNonQuery();
-
-                            MessageBox.Show("Tạo view cho việc phân quyền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            grantQuery = "GRANT " + permission + " ON " + name_user + "_" + table + "_" + collumn + " TO " + name_user;
-                        }
-                        else
-                        {
-                            grantQuery = "GRANT " + permission + " ON " + table + " TO " + name_user;
-                        }
+                        grantQuery = "GRANT " + permission + " ON " + table + " TO " + name_user + grantOption;
                     }
+                    
+                    
 
                     OracleCommand cmd = conn.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = grantQuery;
+                    cmd.CommandText = grantQuery; 
 
 
                     cmd.ExecuteNonQuery();
@@ -450,7 +449,7 @@ namespace ATBMHTTT
         private void btrole_capquyen_Click(object sender, EventArgs e)
         {
             
-            if (cbbrole_collum.Text == "" || cbbrole_permission.Text == "" || cbbrole_table.Text == "" || cbbrole_role.Text == "")
+            if ( cbbrole_permission.Text == "" || cbbrole_table.Text == "" || roleNamePrivilege.Text == "")
             {
                 MessageBox.Show("Bạn cần nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -458,7 +457,7 @@ namespace ATBMHTTT
             {
                 OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
                 DialogResult dialogResult;
-                dialogResult = MessageBox.Show("Bạn có đồng ý cấp quyền này cho user không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                dialogResult = MessageBox.Show("Bạn có đồng ý cấp quyền này cho role không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dialogResult == DialogResult.No)
                     return;
                 try
@@ -466,17 +465,34 @@ namespace ATBMHTTT
                     conn.Open();
                     string grantQuery;
                     string grantQuery1;
-                    string name_role = cbbrole_role.Text;
+                    string name_role = roleNamePrivilege.Text;
                     string table = cbbrole_table.Text;
                     string collumn = cbbrole_collum.Text;
                     string permission = cbbrole_permission.Text;
                     if (cbbrole_permission.Text == "UPDATE")
                     {
-                        grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_role;
+                        if (collumn == "")
+                        {
+                            grantQuery = "GRANT " + permission + " ON " + table + " TO " + name_role ;
+                        }
+                        else
+                        {
+                            grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_role;
+                        }
                     }
                     else if(cbbrole_permission.Text=="SELECT")
                     {
-                        grantQuery1 = "CREATE VIEW " + name_role + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
+                        if (collumn != "")
+                        {
+                            grantQuery1 = "CREATE OR REPLACE VIEW " + name_role + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
+                            grantQuery = "GRANT " + permission + " ON " + name_role + "_" + table + "_" + collumn + " TO " + name_role;
+                        }
+                        else
+                        {
+                            grantQuery1 = "CREATE OR REPLACE VIEW " + name_role + "_" + table + " AS SELECT * FROM " + table;
+                            grantQuery = "GRANT " + permission + " ON " + name_role + "_" + table + " TO " + name_role;
+                        }
+                        
                         OracleCommand cmd1 = conn.CreateCommand();
                         cmd1.CommandType = CommandType.Text;
                         cmd1.CommandText = grantQuery1;
@@ -486,7 +502,7 @@ namespace ATBMHTTT
 
                         MessageBox.Show("Tạo view cho việc phân quyền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        grantQuery = "GRANT " + permission + " ON " + name_role + "_" + table + "_" + collumn + " TO " + name_role;
+                       
                     }    
                     else
                     {
@@ -604,7 +620,7 @@ namespace ATBMHTTT
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                cmd.CommandText = "SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = '" + Login_Info.USERNAME.ToUpper() + "'";
                 OracleDataAdapter da = new OracleDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -613,6 +629,7 @@ namespace ATBMHTTT
                     cbbrole_table.Items.Add(ds.Tables[0].Rows[i][0].ToString());
                     cbbuser_table.Items.Add(ds.Tables[0].Rows[i][0].ToString());                    
                 }
+                cbbuser_collum.Text = "";
                 cmd.CommandText = "SELECT USERNAME FROM ALL_USERS";
                 OracleDataAdapter da1 = new OracleDataAdapter(cmd);
                 DataSet ds1 = new DataSet();
@@ -622,15 +639,7 @@ namespace ATBMHTTT
                     cbbuser_user.Items.Add(ds1.Tables[0].Rows[i][0].ToString());
                     cbbuser.Items.Add(ds1.Tables[0].Rows[i][0].ToString());
                 }
-                cmd.CommandText = "SELECT GRANTEE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME + "'";
-                OracleDataAdapter da2 = new OracleDataAdapter(cmd);
-                DataSet ds2 = new DataSet();
-                da2.Fill(ds2);
-                for (int i = 0; i < ds2.Tables[0].Rows.Count; i++)
-                {
-                    cbbrole_role.Items.Add(ds2.Tables[0].Rows[i][0].ToString());
-                    cbbrole.Items.Add(ds2.Tables[0].Rows[i][0].ToString());
-                }    
+
 
             }
             catch (Exception ex)
@@ -664,6 +673,7 @@ namespace ATBMHTTT
                         OracleDataAdapter da = new OracleDataAdapter(cmd);
                         DataSet ds = new DataSet();
                         da.Fill(ds);
+                        cbbuser_collum.Items.Clear();
                         for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                         {
                             cbbuser_collum.Items.Add(ds.Tables[0].Rows[i][0].ToString());
@@ -711,6 +721,7 @@ namespace ATBMHTTT
                         OracleDataAdapter da = new OracleDataAdapter(cmd);
                         DataSet ds = new DataSet();
                         da.Fill(ds);
+                        cbbrole_collum.Items.Clear();
                         for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                         {
                             cbbrole_collum.Items.Add(ds.Tables[0].Rows[i][0].ToString());
