@@ -55,8 +55,6 @@ namespace ATBMHTTT
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.viewPrivilegesBtn = new System.Windows.Forms.Button();
             this.userNameLabel = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbbuser = new System.Windows.Forms.ComboBox();
@@ -90,7 +88,6 @@ namespace ATBMHTTT
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).BeginInit();
-            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -101,7 +98,6 @@ namespace ATBMHTTT
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(3, 1);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -212,7 +208,7 @@ namespace ATBMHTTT
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Size = new System.Drawing.Size(1051, 622);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Thông tin quyền user/role (Của Trí)";
+            this.tabPage2.Text = "Thông tin quyền user/role";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -382,32 +378,11 @@ namespace ATBMHTTT
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(23, 59);
+            this.userNameLabel.Location = new System.Drawing.Point(23, 61);
             this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(128, 25);
+            this.userNameLabel.Size = new System.Drawing.Size(134, 25);
             this.userNameLabel.TabIndex = 17;
-            this.userNameLabel.Text = "Tên user/role";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1051, 622);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(414, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.userNameLabel.Text = "Tên user/role:";
             // 
             // tabPage4
             // 
@@ -758,7 +733,6 @@ namespace ATBMHTTT
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.privilegesGridView)).EndInit();
-            this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -775,7 +749,6 @@ namespace ATBMHTTT
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -797,7 +770,6 @@ namespace ATBMHTTT
         private System.Windows.Forms.Button btnViewRole;
         private System.Windows.Forms.Button btnViewTable;
         private System.Windows.Forms.Button btnViewUser;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
