@@ -49,7 +49,7 @@ namespace ATBMHTTT
                 conn.Close();
             }
 
-            DialogResult rs = MessageBox.Show(create_user, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+            DialogResult rs = MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
 
             if (rs == DialogResult.OK)
                 this.Close();

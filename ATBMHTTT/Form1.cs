@@ -280,7 +280,7 @@ namespace ATBMHTTT
             {
                 conn.Open();
                 string sqlString = "";
-                sqlString = "SELECT TABLE_NAME, OWNER, TABLESPACE_NAME, CLUSTER_NAME FROM ALL_TABLES WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                sqlString = "SELECT TABLE_NAME, OWNER, TABLESPACE_NAME, CLUSTER_NAME FROM ALL_TABLES WHERE OWNER = '" + Login_Info.USERNAME.ToUpper() + "'";
                 OracleCommand command = new OracleCommand(sqlString, conn);
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);
@@ -304,7 +304,7 @@ namespace ATBMHTTT
             {
                 conn.Open();
                 string sqlString = "";
-                sqlString = "SELECT GRANTEE, OWNER, TABLE_NAME, GRANTOR, PRIVILEGE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                sqlString = "SELECT GRANTEE, OWNER, TABLE_NAME, GRANTOR, PRIVILEGE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME.ToUpper() + "'";
                 OracleCommand command = new OracleCommand(sqlString, conn);
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);
@@ -328,7 +328,7 @@ namespace ATBMHTTT
             {
                 conn.Open();
                 string sqlString = "";
-                sqlString = "SELECT VIEW_NAME, OWNER, TEXT_LENGTH FROM all_Views WHERE OWNER = '" + Login_Info.USERNAME + "'";
+                sqlString = "SELECT VIEW_NAME, OWNER, TEXT_LENGTH FROM all_Views WHERE OWNER = '" + Login_Info.USERNAME.ToUpper() + "'";
                 OracleCommand command = new OracleCommand(sqlString, conn);
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);
