@@ -306,7 +306,7 @@ namespace ATBMHTTT
                 conn.Open();
                 string sqlString = "";
                 //sqlString = "SELECT GRANTEE, OWNER, TABLE_NAME, GRANTOR, PRIVILEGE FROM DBA_TAB_PRIVS WHERE OWNER = '" + Login_Info.USERNAME.ToUpper() + "'";
-                sqlString = "SELECT GRANTED_ROLE, ADMIN_OPTION, DELEGATE_OPTION, DEFAULT_ROLE, COMMON FROM USER_ROLE_PRIVS WHERE USERNAME= '" + Login_Info.USERNAME.ToUpper() + "' AND GRANTED_ROLE != 'DBA'";
+                sqlString = "SELECT GRANTED_ROLE, ADMIN_OPTION, DELEGATE_OPTION, DEFAULT_ROLE, COMMON FROM USER_ROLE_PRIVS WHERE USERNAME= '" + Login_Info.USERNAME.ToUpper() + "' AND GRANTED_ROLE != 'DBA' AND GRANTED_ROLE != 'CONNECT' AND GRANTED_ROLE != 'RESOURCE'";
                 OracleCommand command = new OracleCommand(sqlString, conn);
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);

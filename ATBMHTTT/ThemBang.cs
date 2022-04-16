@@ -47,6 +47,7 @@ namespace ATBMHTTT
 
             tbCol.Clear();
             tbType.Clear();
+            tbTenBang.Enabled = false;
             cbpk.Checked = false;
         }
 

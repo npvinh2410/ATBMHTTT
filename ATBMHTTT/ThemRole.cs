@@ -19,11 +19,11 @@ namespace ATBMHTTT
             InitializeComponent();
         }
 
-        string create_role = "create role ";
+        
 
         private void Them_Click(object sender, EventArgs e)
         {
-            create_role += tbrole.Text;
+            string create_role = "create role ";
 
             OracleConnection conn = DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
             try
@@ -37,7 +37,7 @@ namespace ATBMHTTT
 
                 OracleCommand cmd = conn.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = create_role;
+                cmd.CommandText = create_role + tbrole.Text;
                 cmd.ExecuteNonQuery();
                 DialogResult rs = MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                 if (rs == DialogResult.OK)
@@ -46,6 +46,7 @@ namespace ATBMHTTT
             catch (Exception ex)
             {
                 MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+
             }
             finally
             {
