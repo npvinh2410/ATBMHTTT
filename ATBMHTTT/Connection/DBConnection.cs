@@ -17,5 +17,14 @@ namespace ATBMHTTT.Connection
 
             return DBOracleUtils.GetDBConnection(host, port, sid, user, password);
         }
+
+        public static OracleConnection GetDBConnection_OLS(string user, string password)
+        {
+            string host = "localhost";
+            int port = 1521;
+            string sid = "ols_demo";
+
+            return DBOracleUtils.GetDBConnection(host, port, sid, user, password);
+        }
     }
 }

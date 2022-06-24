@@ -1,6 +1,6 @@
 ﻿namespace ATBMHTTT
 {
-    partial class Form2_Login
+    partial class Login_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,6 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -89,27 +88,15 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.btnLogin);
-            this.panel2.Location = new System.Drawing.Point(265, 284);
+            this.panel2.Location = new System.Drawing.Point(266, 238);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 73);
+            this.panel2.Size = new System.Drawing.Size(273, 73);
             this.panel2.TabIndex = 1;
-            // 
-            // btnExit
-            // 
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(152, 21);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(104, 35);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(3, 21);
+            this.btnLogin.Location = new System.Drawing.Point(115, 21);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(130, 35);
             this.btnLogin.TabIndex = 0;
@@ -139,17 +126,16 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // Form2_Login
+            // Login_Form
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(579, 400);
+            this.ClientSize = new System.Drawing.Size(586, 335);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form2_Login";
+            this.Name = "Login_Form";
             this.Text = "Form2_Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_Login_FormClosing);
             this.panel1.ResumeLayout(false);
@@ -171,7 +157,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.TextBox txtTaiKhoan;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogin;
     }
 }

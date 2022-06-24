@@ -17,7 +17,7 @@ namespace ATBMHTTT
              {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2_Login());
+            Application.Run(new Login_Form());
 
         }
     }
