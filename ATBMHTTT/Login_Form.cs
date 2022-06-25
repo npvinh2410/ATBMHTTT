@@ -42,6 +42,13 @@ namespace ATBMHTTT
                 this.Show();
 
             }
+            else if (username == "dba_yt" && Login(username, password))
+            {
+                TC1_HOME f = new TC1_HOME();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
             else if (username.Contains("NV") && Login(username, password))
             {
                 String vaitro = layVaiTroNV();
@@ -50,11 +57,14 @@ namespace ATBMHTTT
                     TC3_QL_HSBA f = new TC3_QL_HSBA();
                     this.Hide();
                     f.ShowDialog();
+                    this.Show();
                 }
                 else if(vaitro == "NGHIEN CUU")
                 {
                     TC5_NV_NC_Xem_HSBA F5 = new TC5_NV_NC_Xem_HSBA();
+                    this.Hide();
                     F5.Show();
+                    this.Show();
                 }
             }
             else if (username.Contains("BN") && Login(username, password))
@@ -62,7 +72,6 @@ namespace ATBMHTTT
                 TC6_BN_XemTT.LayTTBN(Login_Info.USERNAME);
                 
             }
-
             else if (Login(username, password))
             {
 
@@ -81,7 +90,7 @@ namespace ATBMHTTT
 
         String layVaiTroNV()
         {
-            OracleConnection conn = Connection.DBConnection.GetDBConnection("DBA_ATBM", "ua");
+            OracleConnection conn = Connection.DBConnection.GetDBConnection("DBA_ATBM", "1212");
             try
             {
                 conn.Open();
