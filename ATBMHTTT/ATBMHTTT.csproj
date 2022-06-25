@@ -133,6 +133,12 @@
     <Compile Include="PhanHe2\TC1_NHAN_VIEN.Designer.cs">
       <DependentUpon>TC1_NHAN_VIEN.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanHe2\TC2_TT_CSYT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC2_TT_CSYT.Designer.cs">
+      <DependentUpon>TC2_TT_CSYT.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanHe2\TC3_QL_HSBA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,12 @@
     </Compile>
     <Compile Include="PhanHe2\TC3_QL_HSBA_DV.Designer.cs">
       <DependentUpon>TC3_QL_HSBA_DV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\TC4_BS_HSBA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC4_BS_HSBA.Designer.cs">
+      <DependentUpon>TC4_BS_HSBA.cs</DependentUpon>
     </Compile>
     <Compile Include="PhanHe2\TC5_NC_Xem_HSBA.cs">
       <SubType>Form</SubType>
@@ -213,11 +225,17 @@
     <EmbeddedResource Include="PhanHe2\TC1_NHAN_VIEN.resx">
       <DependentUpon>TC1_NHAN_VIEN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC2_TT_CSYT.resx">
+      <DependentUpon>TC2_TT_CSYT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhanHe2\TC3_QL_HSBA.resx">
       <DependentUpon>TC3_QL_HSBA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanHe2\TC3_QL_HSBA_DV.resx">
       <DependentUpon>TC3_QL_HSBA_DV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC4_BS_HSBA.resx">
+      <DependentUpon>TC4_BS_HSBA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanHe2\TC5_NC_Xem_HSBA.resx">
       <DependentUpon>TC5_NC_Xem_HSBA.cs</DependentUpon>
