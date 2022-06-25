@@ -17,7 +17,7 @@ namespace ATBMHTTT
              {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Form());
+            Application.Run(new PhanHe2.TC2_TT_CSYT());
 
         }
     }

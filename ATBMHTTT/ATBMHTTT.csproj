@@ -97,6 +97,12 @@
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_Info.cs" />
+    <Compile Include="PhanHe2\TC2_TT_CSYT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC2_TT_CSYT.Designer.cs">
+      <DependentUpon>TC2_TT_CSYT.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanHe2\TC3_QL_HSBA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC2_TT_CSYT.resx">
+      <DependentUpon>TC2_TT_CSYT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanHe2\TC3_QL_HSBA.resx">
       <DependentUpon>TC3_QL_HSBA.cs</DependentUpon>
