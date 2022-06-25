@@ -109,11 +109,29 @@
     <Compile Include="PhanHe2\TC3_QL_HSBA_DV.Designer.cs">
       <DependentUpon>TC3_QL_HSBA_DV.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanHe2\TC5_NC_Xem_HSBA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC5_NC_Xem_HSBA.Designer.cs">
+      <DependentUpon>TC5_NC_Xem_HSBA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\TC6_BN_XemTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC6_BN_XemTT.Designer.cs">
+      <DependentUpon>TC6_BN_XemTT.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanHe2\TC7_OLS_THONG_BAO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PhanHe2\TC7_OLS_THONG_BAO.Designer.cs">
       <DependentUpon>TC7_OLS_THONG_BAO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\ThongTinNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\ThongTinNV.Designer.cs">
+      <DependentUpon>ThongTinNV.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,8 +165,17 @@
     <EmbeddedResource Include="PhanHe2\TC3_QL_HSBA_DV.resx">
       <DependentUpon>TC3_QL_HSBA_DV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC5_NC_Xem_HSBA.resx">
+      <DependentUpon>TC5_NC_Xem_HSBA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC6_BN_XemTT.resx">
+      <DependentUpon>TC6_BN_XemTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhanHe2\TC7_OLS_THONG_BAO.resx">
       <DependentUpon>TC7_OLS_THONG_BAO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\ThongTinNV.resx">
+      <DependentUpon>ThongTinNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

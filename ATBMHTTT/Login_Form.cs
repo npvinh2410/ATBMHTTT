@@ -48,7 +48,19 @@ namespace ATBMHTTT
                     TC3_QL_HSBA f = new TC3_QL_HSBA();
                     f.ShowDialog();
                 }
-            } else if (Login(username, password))
+                else if(vaitro == "NGHIEN CUU")
+                {
+                    TC5_NV_NC_Xem_HSBA F5 = new TC5_NV_NC_Xem_HSBA();
+                    F5.Show();
+                }
+            }
+            else if (username.Contains("BN") && Login(username, password))
+            {
+                TC6_BN_XemTT.LayTTBN(Login_Info.USERNAME);
+                
+            }
+
+            else if (Login(username, password))
             {
 
                 Form1 f = new Form1();
@@ -66,7 +78,7 @@ namespace ATBMHTTT
 
         String layVaiTroNV()
         {
-            OracleConnection conn = Connection.DBConnection.GetDBConnection("DBA_ATBM", "1212");
+            OracleConnection conn = Connection.DBConnection.GetDBConnection("DBA_ATBM", "ua");
             try
             {
                 conn.Open();
