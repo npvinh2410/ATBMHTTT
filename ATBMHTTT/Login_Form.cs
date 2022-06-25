@@ -37,8 +37,17 @@ namespace ATBMHTTT
             {
 
                 TC7_OLS_THONG_BAO f = new TC7_OLS_THONG_BAO();
+                this.Hide();
                 f.ShowDialog();
-                
+                this.Show();
+
+            }
+            else if (username == "dba_yt" && Login(username, password))
+            {
+                TC1_HOME f = new TC1_HOME();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
             }
             else if (username.Contains("NV") && Login(username, password))
             {
@@ -46,9 +55,12 @@ namespace ATBMHTTT
                 if(vaitro == "QUAN LY HSBA")
                 {
                     TC3_QL_HSBA f = new TC3_QL_HSBA();
+                    this.Hide();
                     f.ShowDialog();
+                    this.Show();
                 }
-            } else if (Login(username, password))
+            } 
+            else if (Login(username, password))
             {
 
                 Form1 f = new Form1();

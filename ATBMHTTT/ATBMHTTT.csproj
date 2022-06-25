@@ -97,6 +97,42 @@
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_Info.cs" />
+    <Compile Include="PhanHe2\TC1_BENH_NHAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_BENH_NHAN.Designer.cs">
+      <DependentUpon>TC1_BENH_NHAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_CSYT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_CSYT.Designer.cs">
+      <DependentUpon>TC1_CSYT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_CSYT_THEM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_CSYT_THEM.Designer.cs">
+      <DependentUpon>TC1_CSYT_THEM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_HOME.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_HOME.Designer.cs">
+      <DependentUpon>TC1_HOME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_NHANVIEN_THEM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_NHANVIEN_THEM.Designer.cs">
+      <DependentUpon>TC1_NHANVIEN_THEM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_NHAN_VIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC1_NHAN_VIEN.Designer.cs">
+      <DependentUpon>TC1_NHAN_VIEN.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanHe2\TC3_QL_HSBA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +176,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC1_BENH_NHAN.resx">
+      <DependentUpon>TC1_BENH_NHAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC1_CSYT.resx">
+      <DependentUpon>TC1_CSYT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC1_CSYT_THEM.resx">
+      <DependentUpon>TC1_CSYT_THEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC1_HOME.resx">
+      <DependentUpon>TC1_HOME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC1_NHANVIEN_THEM.resx">
+      <DependentUpon>TC1_NHANVIEN_THEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC1_NHAN_VIEN.resx">
+      <DependentUpon>TC1_NHAN_VIEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanHe2\TC3_QL_HSBA.resx">
       <DependentUpon>TC3_QL_HSBA.cs</DependentUpon>
