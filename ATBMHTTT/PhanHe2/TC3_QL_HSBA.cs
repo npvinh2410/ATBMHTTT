@@ -163,5 +163,11 @@ namespace ATBMHTTT.PhanHe2
                 conn.Close();
             }
         }
+
+        private void XemTT_Click(object sender, EventArgs e)
+        {
+            ThongTinNV tt = new ThongTinNV();
+            tt.Show();
+        }
     }
 }

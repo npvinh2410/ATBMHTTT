@@ -37,9 +37,9 @@ namespace ATBMHTTT.PhanHe2
                 }
                 else if (chon == "Bệnh nhân")
                 {
-                    query = "select * from DBA_ATBM.BENHNHAN";
+                    query = "select * from DBA_ATBM.BenhNhanEncrypt_view";
                 }
-                else if (chon == "Cơ sở y tê")
+                else if (chon == "Cơ sở y tế")
                 {
                     query = "select * from DBA_ATBM.CSYT";
                 }
@@ -63,6 +63,12 @@ namespace ATBMHTTT.PhanHe2
             {
                 conn.Close();
             }
+        }
+
+        private void XemTT_Click(object sender, EventArgs e)
+        {
+            ThongTinNV tt = new ThongTinNV();
+            tt.Show();
         }
     }
 }

@@ -63,14 +63,27 @@ namespace ATBMHTTT
                 {
                     TC5_NV_NC_Xem_HSBA F5 = new TC5_NV_NC_Xem_HSBA();
                     this.Hide();
-                    F5.Show();
+                    F5.ShowDialog();
+                    this.Show();
+                }
+                else if (vaitro == "THANH TRA")
+                {
+                    TC2_TT_CSYT F5 = new TC2_TT_CSYT();
+                    this.Hide();
+                    F5.ShowDialog();
+                    this.Show();
+                }
+                else if (vaitro == "BAC SI")
+                {
+                    TC4_BS_HSBA F5 = new TC4_BS_HSBA();
+                    this.Hide();
+                    F5.ShowDialog();
                     this.Show();
                 }
             }
             else if (username.Contains("BN") && Login(username, password))
             {
                 TC6_BN_XemTT.LayTTBN(Login_Info.USERNAME);
-                
             }
             else if (Login(username, password))
             {

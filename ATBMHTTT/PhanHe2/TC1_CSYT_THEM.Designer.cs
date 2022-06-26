@@ -30,16 +30,16 @@ namespace ATBMHTTT.PhanHe2
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.sdt = new System.Windows.Forms.TextBox();
+            this.diachi = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.ten = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.maCSYT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.diachi = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.sdt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,12 +62,46 @@ namespace ATBMHTTT.PhanHe2
             this.panel2.Size = new System.Drawing.Size(350, 309);
             this.panel2.TabIndex = 13;
             // 
+            // sdt
+            // 
+            this.sdt.Location = new System.Drawing.Point(115, 204);
+            this.sdt.Name = "sdt";
+            this.sdt.Size = new System.Drawing.Size(213, 22);
+            this.sdt.TabIndex = 4;
+            // 
+            // diachi
+            // 
+            this.diachi.Location = new System.Drawing.Point(115, 159);
+            this.diachi.Name = "diachi";
+            this.diachi.Size = new System.Drawing.Size(213, 22);
+            this.diachi.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 206);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 20);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Sđt:";
+            // 
             // ten
             // 
             this.ten.Location = new System.Drawing.Point(115, 117);
             this.ten.Name = "ten";
             this.ten.Size = new System.Drawing.Size(213, 22);
-            this.ten.TabIndex = 32;
+            this.ten.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Địa chỉ:";
             // 
             // btnThem
             // 
@@ -94,7 +128,7 @@ namespace ATBMHTTT.PhanHe2
             this.maCSYT.Location = new System.Drawing.Point(115, 68);
             this.maCSYT.Name = "maCSYT";
             this.maCSYT.Size = new System.Drawing.Size(213, 22);
-            this.maCSYT.TabIndex = 26;
+            this.maCSYT.TabIndex = 1;
             // 
             // label6
             // 
@@ -115,40 +149,6 @@ namespace ATBMHTTT.PhanHe2
             this.label4.Size = new System.Drawing.Size(117, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Nhập thông tin";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 161);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Địa chỉ:";
-            // 
-            // diachi
-            // 
-            this.diachi.Location = new System.Drawing.Point(115, 159);
-            this.diachi.Name = "diachi";
-            this.diachi.Size = new System.Drawing.Size(213, 22);
-            this.diachi.TabIndex = 32;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 206);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 20);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Sđt:";
-            // 
-            // sdt
-            // 
-            this.sdt.Location = new System.Drawing.Point(115, 204);
-            this.sdt.Name = "sdt";
-            this.sdt.Size = new System.Drawing.Size(213, 22);
-            this.sdt.TabIndex = 32;
             // 
             // label3
             // 

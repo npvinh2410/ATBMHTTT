@@ -38,7 +38,7 @@ namespace ATBMHTTT.PhanHe2
             {
                 conn.Open();
 
-                string query = "select MABN, MACSYT, TENBN, CMND, TO_CHAR(NGAYSINH, 'dd/mm/yyyy') NGSINH, SONHA, TENDUONG, QUANHUYEN, TINHTP, TIENSUBENH, TIENSUBENHGD, DIUNGTHUOC from DBA_ATBM.BENHNHAN WHERE MABN = '" + maBN + "'";
+                string query = "select MABN, MACSYT, TENBN, CMND, TO_CHAR(NGAYSINH, 'dd/mm/yyyy') NGSINH, SONHA, TENDUONG, QUANHUYEN, TINHTP, TIENSUBENH, TIENSUBENHGD, DIUNGTHUOC from DBA_ATBM.BENHNHANENCRYPT_VIEW WHERE MABN = '" + maBN + "'";
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dt = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);
@@ -93,39 +93,43 @@ namespace ATBMHTTT.PhanHe2
                 case DialogResult.Ignore:
                     break;
                 case DialogResult.Yes:
+
+
                     OracleConnection conn = Connection.DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
                     try
                     {
-                        conn.Open();
+                        
+                        string query = "DBA_ATBM.CapNhatBenhNhan";
 
-                        string ten = t2.Text;
-                        string ngaysinh = t4.Text;
-                        string cmnd = t5.Text;
-                        string sonha = t6.Text;
-                        string tenduong = t7.Text;
-                        string quanhuyen = t8.Text;
-                        string tinhtp = t9.Text;
-                        string tiensubenh = t10.Text;
-                        string tiensubenhgd = t11.Text;
-                        string diung = t12.Text;
+                        OracleCommand command = new OracleCommand(query, conn);
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add("MABN1", OracleDbType.Char).Value = t1.Text.Trim();
+                        command.Parameters.Add("MACSYT1", OracleDbType.Char).Value = t3.Text;
+                        command.Parameters.Add("TENBN1", OracleDbType.Varchar2).Value = t2.Text;
+                        command.Parameters.Add("CMND1", OracleDbType.Varchar2).Value = t5.Text;
+                        command.Parameters.Add("NGAYSINH1", OracleDbType.Date).Value = DateTime.Parse(t4.Text);
+                        command.Parameters.Add("SONHA1", OracleDbType.Char).Value = t6.Text;
+                        command.Parameters.Add("TENDUONG1", OracleDbType.Char).Value = t7.Text;
+                        command.Parameters.Add("QUANHUYEN1", OracleDbType.Varchar2).Value = t8.Text;
+                        command.Parameters.Add("TINHTP1", OracleDbType.Varchar2).Value = t9.Text;
+                        command.Parameters.Add("TIENSUBENH1", OracleDbType.Varchar2).Value = t10.Text;
+                        command.Parameters.Add("TIENSUBENHGD1", OracleDbType.Varchar2).Value = t11.Text;
+                        command.Parameters.Add("DIUNGTHUOC1", OracleDbType.Varchar2).Value = t12.Text;
 
-                        string query = "update DBA_ATBM.BENHNHAN set TENBN = '" + ten + "', SONHA = '" + sonha + "', NGAYSINH = to_date('" + ngaysinh + "', 'dd/mm/yyyy'), CMND = '" + cmnd + "', QUANHUYEN = '" + quanhuyen + "', TINHTP = '" + tinhtp + "', TIENSUBENH = '" + tiensubenh + "', TIENSUBENHGD = '" + tiensubenhgd + "', DIUNGTHUOC = '" + diung + "' where MABN = '" + Login_Info.USERNAME.ToUpper() + "'";
-                        OracleCommand command = conn.CreateCommand();
-                        command.CommandType = CommandType.Text;
-                        command.CommandText = query;
+                        command.Connection.Open();
                         command.ExecuteNonQuery();
+                        MessageBox.Show("Bạn đã cập nhật thành công");
 
                     }
                     catch (Exception ex)
                     {
-                        return;
+                        MessageBox.Show("Lỗi");
                     }
                     finally
                     {
-
                         conn.Close();
                     }
-                    MessageBox.Show("Bạn đã cập nhật thành công");
+                    
                     break;
                 case DialogResult.No:
                     break;

@@ -24,8 +24,8 @@ namespace ATBMHTTT.PhanHe2
             try
             {
                 conn.Open();
-                
-                string query = "SELECT * FROM DBA_ATBM.HSBA INNER JOIN DBA_ATBM.HSBA_DV USING(MAHSBA, NGAY) WHERE MABS = '" + Login_Info.USERNAME.ToUpper() + "' ";
+
+                string query = "select * from DBA_ATBM.hsba";
 
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();
@@ -50,8 +50,21 @@ namespace ATBMHTTT.PhanHe2
             try
             {
                 conn.Open();
-                string MaBN = txtMaBN.Text.ToUpper();
-                string query = "select * from DBA_ATBM.BENHNHAN WHERE MABN = '" + MaBN + "' ";
+                string searchInfo = txtMaBN.Text.ToUpper();
+                string query;
+                if (searchInfo.Contains("BN"))
+                {
+                    query = "select * from DBA_ATBM.BENHNHANENCRYPT_VIEW WHERE MABN = '" + searchInfo + "' ";
+                }
+                else if (searchInfo == "")
+                {
+                    query = "select * from DBA_ATBM.BENHNHANENCRYPT_VIEW";
+                }
+                else
+                {
+                    query = "select * from DBA_ATBM.BENHNHANENCRYPT_VIEW WHERE CMND LIKE '%" + searchInfo + "%'";
+                }
+                
 
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();
@@ -68,6 +81,20 @@ namespace ATBMHTTT.PhanHe2
             {
                 conn.Close();
             }
+        }
+
+        private void XemTT_Click(object sender, EventArgs e)
+        {
+            ThongTinNV tt = new ThongTinNV();
+            tt.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String maHSBA = dataGridViewHSBA.SelectedRows[0].Cells[0].Value.ToString();
+
+            TC4_HSBA_DV f = new TC4_HSBA_DV(maHSBA);
+            f.ShowDialog();
         }
     }
 }

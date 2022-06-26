@@ -32,6 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnKiemTra = new System.Windows.Forms.Button();
             this.CbbChonViewXem = new System.Windows.Forms.ComboBox();
+            this.XemTT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(138, 64);
+            this.label1.Location = new System.Drawing.Point(142, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(516, 23);
             this.label1.TabIndex = 7;
@@ -48,7 +49,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(90, 174);
+            this.dataGridView1.Location = new System.Drawing.Point(93, 172);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -58,7 +59,7 @@
             // btnKiemTra
             // 
             this.btnKiemTra.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKiemTra.Location = new System.Drawing.Point(483, 101);
+            this.btnKiemTra.Location = new System.Drawing.Point(486, 99);
             this.btnKiemTra.Name = "btnKiemTra";
             this.btnKiemTra.Size = new System.Drawing.Size(182, 38);
             this.btnKiemTra.TabIndex = 5;
@@ -76,17 +77,30 @@
             "Bệnh nhân",
             "Cơ sở y tế",
             "Nhân viên"});
-            this.CbbChonViewXem.Location = new System.Drawing.Point(123, 109);
+            this.CbbChonViewXem.Location = new System.Drawing.Point(126, 107);
             this.CbbChonViewXem.Name = "CbbChonViewXem";
             this.CbbChonViewXem.Size = new System.Drawing.Size(295, 24);
             this.CbbChonViewXem.TabIndex = 4;
             this.CbbChonViewXem.Text = "-- Chọn bảng --";
             // 
+            // XemTT
+            // 
+            this.XemTT.AutoSize = true;
+            this.XemTT.Location = new System.Drawing.Point(690, 16);
+            this.XemTT.Margin = new System.Windows.Forms.Padding(4);
+            this.XemTT.Name = "XemTT";
+            this.XemTT.Size = new System.Drawing.Size(133, 32);
+            this.XemTT.TabIndex = 8;
+            this.XemTT.Text = "Thông tin cá nhân";
+            this.XemTT.UseVisualStyleBackColor = true;
+            this.XemTT.Click += new System.EventHandler(this.XemTT_Click);
+            // 
             // TC2_TT_CSYT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(851, 421);
+            this.Controls.Add(this.XemTT);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnKiemTra);
@@ -105,5 +119,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnKiemTra;
         private System.Windows.Forms.ComboBox CbbChonViewXem;
+        private System.Windows.Forms.Button XemTT;
     }
 }

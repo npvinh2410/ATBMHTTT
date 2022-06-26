@@ -148,7 +148,7 @@ namespace ATBMHTTT.PhanHe2
             this.ketqua.Multiline = true;
             this.ketqua.Name = "ketqua";
             this.ketqua.Size = new System.Drawing.Size(213, 61);
-            this.ketqua.TabIndex = 31;
+            this.ketqua.TabIndex = 33;
             // 
             // label10
             // 

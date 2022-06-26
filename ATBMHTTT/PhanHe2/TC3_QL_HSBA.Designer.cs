@@ -41,6 +41,7 @@ namespace ATBMHTTT.PhanHe2
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.ngay = new System.Windows.Forms.DateTimePicker();
             this.ketLuan = new System.Windows.Forms.TextBox();
@@ -56,7 +57,7 @@ namespace ATBMHTTT.PhanHe2
             this.label6 = new System.Windows.Forms.Label();
             this.maHSBA = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.XemTT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridHSBA)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -127,7 +128,7 @@ namespace ATBMHTTT.PhanHe2
             this.btnThem.Location = new System.Drawing.Point(246, 434);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(88, 37);
-            this.btnThem.TabIndex = 3;
+            this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -199,6 +200,16 @@ namespace ATBMHTTT.PhanHe2
             this.panel2.Size = new System.Drawing.Size(365, 495);
             this.panel2.TabIndex = 7;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(18, 232);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 20);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "đoán:";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -214,7 +225,7 @@ namespace ATBMHTTT.PhanHe2
             this.ngay.Location = new System.Drawing.Point(121, 161);
             this.ngay.Name = "ngay";
             this.ngay.Size = new System.Drawing.Size(213, 22);
-            this.ngay.TabIndex = 22;
+            this.ngay.TabIndex = 3;
             // 
             // ketLuan
             // 
@@ -222,7 +233,7 @@ namespace ATBMHTTT.PhanHe2
             this.ketLuan.Multiline = true;
             this.ketLuan.Name = "ketLuan";
             this.ketLuan.Size = new System.Drawing.Size(213, 50);
-            this.ketLuan.TabIndex = 21;
+            this.ketLuan.TabIndex = 7;
             // 
             // label12
             // 
@@ -239,7 +250,7 @@ namespace ATBMHTTT.PhanHe2
             this.maBs.Location = new System.Drawing.Point(121, 269);
             this.maBs.Name = "maBs";
             this.maBs.Size = new System.Drawing.Size(213, 22);
-            this.maBs.TabIndex = 17;
+            this.maBs.TabIndex = 5;
             // 
             // label10
             // 
@@ -256,7 +267,7 @@ namespace ATBMHTTT.PhanHe2
             this.maKhoa.Location = new System.Drawing.Point(121, 313);
             this.maKhoa.Name = "maKhoa";
             this.maKhoa.Size = new System.Drawing.Size(213, 22);
-            this.maKhoa.TabIndex = 17;
+            this.maKhoa.TabIndex = 6;
             // 
             // label9
             // 
@@ -274,7 +285,7 @@ namespace ATBMHTTT.PhanHe2
             this.chuanDoan.Multiline = true;
             this.chuanDoan.Name = "chuanDoan";
             this.chuanDoan.Size = new System.Drawing.Size(213, 46);
-            this.chuanDoan.TabIndex = 15;
+            this.chuanDoan.TabIndex = 4;
             // 
             // label8
             // 
@@ -301,7 +312,7 @@ namespace ATBMHTTT.PhanHe2
             this.maBN.Location = new System.Drawing.Point(121, 121);
             this.maBN.Name = "maBN";
             this.maBN.Size = new System.Drawing.Size(213, 22);
-            this.maBN.TabIndex = 11;
+            this.maBN.TabIndex = 2;
             // 
             // label6
             // 
@@ -318,7 +329,7 @@ namespace ATBMHTTT.PhanHe2
             this.maHSBA.Location = new System.Drawing.Point(121, 78);
             this.maHSBA.Name = "maHSBA";
             this.maHSBA.Size = new System.Drawing.Size(213, 22);
-            this.maHSBA.TabIndex = 9;
+            this.maHSBA.TabIndex = 1;
             // 
             // label3
             // 
@@ -330,21 +341,24 @@ namespace ATBMHTTT.PhanHe2
             this.label3.TabIndex = 8;
             this.label3.Text = "Mã HSBA:";
             // 
-            // label11
+            // XemTT
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(18, 232);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 20);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "đoán:";
+            this.XemTT.AutoSize = true;
+            this.XemTT.Location = new System.Drawing.Point(1068, 20);
+            this.XemTT.Margin = new System.Windows.Forms.Padding(4);
+            this.XemTT.Name = "XemTT";
+            this.XemTT.Size = new System.Drawing.Size(139, 36);
+            this.XemTT.TabIndex = 8;
+            this.XemTT.Text = "Thông tin cá nhân";
+            this.XemTT.UseVisualStyleBackColor = true;
+            this.XemTT.Click += new System.EventHandler(this.XemTT_Click);
             // 
             // TC3_QL_HSBA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 695);
+            this.Controls.Add(this.XemTT);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.csytLabel);
@@ -393,5 +407,6 @@ namespace ATBMHTTT.PhanHe2
         private System.Windows.Forms.TextBox maHSBA;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button XemTT;
     }
 }

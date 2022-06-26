@@ -32,8 +32,8 @@ namespace ATBMHTTT.PhanHe2
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.GridCSYT = new System.Windows.Forms.DataGridView();
-            this.btnXem = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnXem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sdt = new System.Windows.Forms.TextBox();
             this.diachi = new System.Windows.Forms.TextBox();
@@ -82,16 +82,6 @@ namespace ATBMHTTT.PhanHe2
             this.GridCSYT.TabIndex = 7;
             this.GridCSYT.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.GridCSYT_MouseDoubleClick);
             // 
-            // btnXem
-            // 
-            this.btnXem.Location = new System.Drawing.Point(19, 49);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(88, 37);
-            this.btnXem.TabIndex = 9;
-            this.btnXem.Text = "Xem";
-            this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
-            // 
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(19, 110);
@@ -101,6 +91,16 @@ namespace ATBMHTTT.PhanHe2
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXem
+            // 
+            this.btnXem.Location = new System.Drawing.Point(19, 49);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(88, 37);
+            this.btnXem.TabIndex = 9;
+            this.btnXem.Text = "Xem";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // panel2
             // 
@@ -125,14 +125,14 @@ namespace ATBMHTTT.PhanHe2
             this.sdt.Location = new System.Drawing.Point(116, 226);
             this.sdt.Name = "sdt";
             this.sdt.Size = new System.Drawing.Size(213, 22);
-            this.sdt.TabIndex = 32;
+            this.sdt.TabIndex = 3;
             // 
             // diachi
             // 
             this.diachi.Location = new System.Drawing.Point(116, 181);
             this.diachi.Name = "diachi";
             this.diachi.Size = new System.Drawing.Size(213, 22);
-            this.diachi.TabIndex = 32;
+            this.diachi.TabIndex = 2;
             // 
             // label2
             // 
@@ -149,7 +149,7 @@ namespace ATBMHTTT.PhanHe2
             this.ten.Location = new System.Drawing.Point(116, 139);
             this.ten.Name = "ten";
             this.ten.Size = new System.Drawing.Size(213, 22);
-            this.ten.TabIndex = 32;
+            this.ten.TabIndex = 1;
             // 
             // label3
             // 
@@ -166,7 +166,7 @@ namespace ATBMHTTT.PhanHe2
             this.btnUpdate.Location = new System.Drawing.Point(241, 300);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(88, 37);
-            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);

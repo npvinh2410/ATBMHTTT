@@ -13,9 +13,50 @@ namespace ATBMHTTT.PhanHe2
 {
     public partial class ThongTinNV : Form
     {
-        public ThongTinNV(string ma, string ten, string phai, string ngaysinh, string que, string sdt, string cmnd, string csyt, string vaitro, string chuyenkhoa)
+        public static DataTable Xem_TT_NV(string maNV)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(Login_Info.USERNAME, Login_Info.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query = "select MANV, HOTEN, PHAI, TO_CHAR(NGAYSINH, 'dd/mm/yyyy') NGSINH, CMND, QUEQUAN, SODT,CSYT, VAITRO, CHUYENKHOA from DBA_ATBM.NHAN_VIEN WHERE MANV = '" + Login_Info.USERNAME.ToUpper() + "'";
+
+                OracleCommand command = new OracleCommand(query, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        public ThongTinNV()
         {
             InitializeComponent();
+
+            DataTable dt = Xem_TT_NV(Login_Info.USERNAME);
+            DataRow row = dt.Rows[0];
+            string ma = row["MANV"].ToString();
+            string ten = row["HOTEN"].ToString();
+            string phai = row["PHAI"].ToString();
+            string ngaysinh = row["NGSINH"].ToString();
+            string cmnd = row["CMND"].ToString();
+            string que = row["QUEQUAN"].ToString();
+            string sdt = row["SODT"].ToString();
+            string csyt = row["CSYT"].ToString();
+            string vaitro = row["VAITRO"].ToString();
+            string chuyenkhoa = row["CHUYENKHOA"].ToString();
 
             t1.Text = ma;
             t2.Text = ten;

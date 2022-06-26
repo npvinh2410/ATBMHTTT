@@ -157,11 +157,23 @@
     <Compile Include="PhanHe2\TC4_BS_HSBA.Designer.cs">
       <DependentUpon>TC4_BS_HSBA.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanHe2\TC4_HSBA_DV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC4_HSBA_DV.Designer.cs">
+      <DependentUpon>TC4_HSBA_DV.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanHe2\TC5_NC_Xem_HSBA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PhanHe2\TC5_NC_Xem_HSBA.Designer.cs">
       <DependentUpon>TC5_NC_Xem_HSBA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHe2\TC5_NC_Xem_HSBADV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHe2\TC5_NC_Xem_HSBADV.Designer.cs">
+      <DependentUpon>TC5_NC_Xem_HSBADV.cs</DependentUpon>
     </Compile>
     <Compile Include="PhanHe2\TC6_BN_XemTT.cs">
       <SubType>Form</SubType>
@@ -237,8 +249,14 @@
     <EmbeddedResource Include="PhanHe2\TC4_BS_HSBA.resx">
       <DependentUpon>TC4_BS_HSBA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC4_HSBA_DV.resx">
+      <DependentUpon>TC4_HSBA_DV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhanHe2\TC5_NC_Xem_HSBA.resx">
       <DependentUpon>TC5_NC_Xem_HSBA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHe2\TC5_NC_Xem_HSBADV.resx">
+      <DependentUpon>TC5_NC_Xem_HSBADV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanHe2\TC6_BN_XemTT.resx">
       <DependentUpon>TC6_BN_XemTT.cs</DependentUpon>
