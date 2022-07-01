@@ -104,7 +104,7 @@ namespace ATBMHTTT.PhanHe2
 
                 command.Connection.Open();
                 command.ExecuteNonQuery();
-                MessageBox.Show("Xóa thành công");
+
                 getThongtinHSBA_DV(maHSBA_global);
             }
             catch (Exception ex)

@@ -31,11 +31,11 @@ namespace ATBMHTTT.PhanHe2
         {
             this.label1 = new System.Windows.Forms.Label();
             this.GridThongBao = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.xemBtn = new System.Windows.Forms.Button();
             this.NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYGIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIADIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.xemBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridThongBao)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,27 +61,8 @@ namespace ATBMHTTT.PhanHe2
             this.GridThongBao.Name = "GridThongBao";
             this.GridThongBao.RowHeadersWidth = 51;
             this.GridThongBao.RowTemplate.Height = 24;
-            this.GridThongBao.Size = new System.Drawing.Size(716, 422);
+            this.GridThongBao.Size = new System.Drawing.Size(729, 422);
             this.GridThongBao.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.xemBtn);
-            this.panel1.Controls.Add(this.GridThongBao);
-            this.panel1.Location = new System.Drawing.Point(38, 118);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(869, 428);
-            this.panel1.TabIndex = 2;
-            // 
-            // xemBtn
-            // 
-            this.xemBtn.Location = new System.Drawing.Point(753, 30);
-            this.xemBtn.Name = "xemBtn";
-            this.xemBtn.Size = new System.Drawing.Size(88, 59);
-            this.xemBtn.TabIndex = 2;
-            this.xemBtn.Text = "Xem thông báo";
-            this.xemBtn.UseVisualStyleBackColor = true;
-            this.xemBtn.Click += new System.EventHandler(this.xemBtn_Click);
             // 
             // NOIDUNG
             // 
@@ -103,6 +84,25 @@ namespace ATBMHTTT.PhanHe2
             this.DIADIEM.MinimumWidth = 6;
             this.DIADIEM.Name = "DIADIEM";
             this.DIADIEM.Width = 70;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.xemBtn);
+            this.panel1.Controls.Add(this.GridThongBao);
+            this.panel1.Location = new System.Drawing.Point(38, 118);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(869, 428);
+            this.panel1.TabIndex = 2;
+            // 
+            // xemBtn
+            // 
+            this.xemBtn.Location = new System.Drawing.Point(753, 30);
+            this.xemBtn.Name = "xemBtn";
+            this.xemBtn.Size = new System.Drawing.Size(88, 59);
+            this.xemBtn.TabIndex = 2;
+            this.xemBtn.Text = "Xem thông báo";
+            this.xemBtn.UseVisualStyleBackColor = true;
+            this.xemBtn.Click += new System.EventHandler(this.xemBtn_Click);
             // 
             // TC7_OLS_THONG_BAO
             // 

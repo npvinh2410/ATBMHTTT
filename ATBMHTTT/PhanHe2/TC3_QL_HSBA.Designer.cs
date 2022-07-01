@@ -48,7 +48,6 @@ namespace ATBMHTTT.PhanHe2
             this.label12 = new System.Windows.Forms.Label();
             this.maBs = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.maKhoa = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chuanDoan = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@ namespace ATBMHTTT.PhanHe2
             this.maHSBA = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.XemTT = new System.Windows.Forms.Button();
+            this.maKhoa = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridHSBA)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -178,6 +178,7 @@ namespace ATBMHTTT.PhanHe2
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.maKhoa);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.ngay);
@@ -185,7 +186,6 @@ namespace ATBMHTTT.PhanHe2
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.maBs);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.maKhoa);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.chuanDoan);
             this.panel2.Controls.Add(this.label8);
@@ -261,13 +261,6 @@ namespace ATBMHTTT.PhanHe2
             this.label10.Size = new System.Drawing.Size(65, 20);
             this.label10.TabIndex = 16;
             this.label10.Text = "Mã BS:";
-            // 
-            // maKhoa
-            // 
-            this.maKhoa.Location = new System.Drawing.Point(121, 313);
-            this.maKhoa.Name = "maKhoa";
-            this.maKhoa.Size = new System.Drawing.Size(213, 22);
-            this.maKhoa.TabIndex = 6;
             // 
             // label9
             // 
@@ -353,6 +346,20 @@ namespace ATBMHTTT.PhanHe2
             this.XemTT.UseVisualStyleBackColor = true;
             this.XemTT.Click += new System.EventHandler(this.XemTT_Click);
             // 
+            // maKhoa
+            // 
+            this.maKhoa.FormattingEnabled = true;
+            this.maKhoa.Items.AddRange(new object[] {
+            "NOI KHOA",
+            "NGOAI KHOA",
+            "DA KHOA",
+            "PHU SAN",
+            "Y DUOC"});
+            this.maKhoa.Location = new System.Drawing.Point(121, 309);
+            this.maKhoa.Name = "maKhoa";
+            this.maKhoa.Size = new System.Drawing.Size(213, 24);
+            this.maKhoa.TabIndex = 25;
+            // 
             // TC3_QL_HSBA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,7 +404,6 @@ namespace ATBMHTTT.PhanHe2
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox maBs;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox maKhoa;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox chuanDoan;
         private System.Windows.Forms.Label label8;
@@ -408,5 +414,6 @@ namespace ATBMHTTT.PhanHe2
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button XemTT;
+        private System.Windows.Forms.ComboBox maKhoa;
     }
 }

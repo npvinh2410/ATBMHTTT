@@ -42,6 +42,11 @@ namespace ATBMHTTT
                 cmd.CommandText = create_user;
                 cmd.ExecuteNonQuery();
 
+                OracleCommand cmd3 = conn.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.CommandText = "grant create session to " + tbuser.Text;
+                cmd3.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {

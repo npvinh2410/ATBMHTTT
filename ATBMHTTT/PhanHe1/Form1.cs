@@ -394,18 +394,11 @@ namespace ATBMHTTT
                             grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_user + grantOption;
                         }
                     }
-                    else if (cbbuser_permission.Text =="SELECT")
+                    else if (cbbuser_permission.Text =="SELECT" && collumn != "")
                     {
-                        if(collumn != "")
-                        {
-                            grantQuery1 = "CREATE OR REPLACE VIEW " + name_user + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
-                            grantQuery = "GRANT " + permission + " ON " + name_user + "_" + table + "_" + collumn + " TO " + name_user + grantOption;
-                        }
-                        else
-                        {
-                            grantQuery1 = "CREATE OR REPLACE VIEW " + name_user + "_" + table + " AS SELECT * FROM " + table;
-                            grantQuery = "GRANT " + permission + " ON " + name_user + "_" + table + " TO " + name_user + grantOption;
-                        }
+
+                        grantQuery1 = "CREATE OR REPLACE VIEW " + name_user + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
+                        grantQuery = "GRANT " + permission + " ON " + name_user + "_" + table + "_" + collumn + " TO " + name_user + grantOption;
                         
                         OracleCommand cmd1 = conn.CreateCommand();
                         cmd1.CommandType = CommandType.Text;
@@ -437,7 +430,7 @@ namespace ATBMHTTT
                 }
                 catch(Exception ex)
                 {
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 finally
                 {
@@ -480,18 +473,11 @@ namespace ATBMHTTT
                             grantQuery = "GRANT " + permission + "(" + collumn + ") ON " + table + " TO " + name_role;
                         }
                     }
-                    else if(cbbrole_permission.Text=="SELECT")
+                    else if(cbbrole_permission.Text=="SELECT" && collumn != "")
                     {
-                        if (collumn != "")
-                        {
-                            grantQuery1 = "CREATE OR REPLACE VIEW " + name_role + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
-                            grantQuery = "GRANT " + permission + " ON " + name_role + "_" + table + "_" + collumn + " TO " + name_role;
-                        }
-                        else
-                        {
-                            grantQuery1 = "CREATE OR REPLACE VIEW " + name_role + "_" + table + " AS SELECT * FROM " + table;
-                            grantQuery = "GRANT " + permission + " ON " + name_role + "_" + table + " TO " + name_role;
-                        }
+                        
+                        grantQuery1 = "CREATE OR REPLACE VIEW " + name_role + "_" + table + "_" + collumn + " AS SELECT " + collumn + " FROM " + table;
+                        grantQuery = "GRANT " + permission + " ON " + name_role + "_" + table + "_" + collumn + " TO " + name_role;
                         
                         OracleCommand cmd1 = conn.CreateCommand();
                         cmd1.CommandType = CommandType.Text;
@@ -521,7 +507,7 @@ namespace ATBMHTTT
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 finally
                 {
@@ -564,7 +550,7 @@ namespace ATBMHTTT
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 finally
                 {

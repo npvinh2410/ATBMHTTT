@@ -150,7 +150,6 @@ namespace ATBMHTTT.PhanHe2
 
                 transaction.Commit();
 
-                MessageBox.Show("Xóa thành công");
                 
             }
             catch (Exception ex)

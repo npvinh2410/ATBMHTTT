@@ -32,7 +32,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnKiemTra = new System.Windows.Forms.Button();
             this.CbbChonViewXem = new System.Windows.Forms.ComboBox();
-            this.XemTT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,24 +82,11 @@
             this.CbbChonViewXem.TabIndex = 4;
             this.CbbChonViewXem.Text = "-- Chọn bảng --";
             // 
-            // XemTT
-            // 
-            this.XemTT.AutoSize = true;
-            this.XemTT.Location = new System.Drawing.Point(690, 16);
-            this.XemTT.Margin = new System.Windows.Forms.Padding(4);
-            this.XemTT.Name = "XemTT";
-            this.XemTT.Size = new System.Drawing.Size(133, 32);
-            this.XemTT.TabIndex = 8;
-            this.XemTT.Text = "Thông tin cá nhân";
-            this.XemTT.UseVisualStyleBackColor = true;
-            this.XemTT.Click += new System.EventHandler(this.XemTT_Click);
-            // 
             // TC2_TT_CSYT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 421);
-            this.Controls.Add(this.XemTT);
+            this.ClientSize = new System.Drawing.Size(818, 416);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnKiemTra);
@@ -119,6 +105,5 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnKiemTra;
         private System.Windows.Forms.ComboBox CbbChonViewXem;
-        private System.Windows.Forms.Button XemTT;
     }
 }
